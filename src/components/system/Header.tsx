@@ -1,36 +1,18 @@
 import { Moon, Sun } from 'lucide-react'
-import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
+import { useTheme } from '@/hooks'
 
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { MinimalTopNav } from './MinimalTopNav'
 
 export function Header() {
-  const [isDark, setIsDark] = useState(false)
+  const { isDark, toggleTheme } = useTheme()
   const { t } = useTranslation()
-
-  useEffect(() => {
-    const root = document.documentElement
-    const stored = localStorage.getItem('theme')
-    const prefersDark =
-      window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-    const enableDark = stored ? stored === 'dark' : prefersDark
-    setIsDark(enableDark)
-    root.classList.toggle('dark', enableDark)
-  }, [])
-
-  const toggleTheme = () => {
-    const root = document.documentElement
-    const next = !isDark
-    setIsDark(next)
-    root.classList.toggle('dark', next)
-    localStorage.setItem('theme', next ? 'dark' : 'light')
-  }
 
   return (
     <header className="sticky top-4 z-10">

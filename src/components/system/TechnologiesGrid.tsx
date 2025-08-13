@@ -1,137 +1,28 @@
-import {
-  Code,
-  Coffee,
-  Database,
-  FileJson,
-  GitBranch,
-  Globe,
-  Layers,
-  Palette,
-  Settings,
-  Table,
-} from 'lucide-react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import { SectionHeader } from '@/components/shared'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-
-const technologies = [
-  {
-    name: 'Java',
-    icon: Coffee,
-    category: 'Backend',
-    level: 'Advanced',
-    descriptionKey: 'technologies.descriptions.java',
-  },
-  {
-    name: 'Spring Framework',
-    icon: Code,
-    category: 'Backend',
-    level: 'Advanced',
-    descriptionKey: 'technologies.descriptions.spring',
-  },
-  {
-    name: 'React',
-    icon: Palette,
-    category: 'Frontend',
-    level: 'Intermediate',
-    descriptionKey: 'technologies.descriptions.react',
-  },
-  {
-    name: 'TypeScript',
-    icon: Code,
-    category: 'Frontend',
-    level: 'Intermediate',
-    descriptionKey: 'technologies.descriptions.typescript',
-  },
-  {
-    name: 'SQL Databases',
-    icon: Table,
-    category: 'Database',
-    level: 'Advanced',
-    descriptionKey: 'technologies.descriptions.sql',
-  },
-  {
-    name: 'NoSQL',
-    icon: FileJson,
-    category: 'Database',
-    level: 'Intermediate',
-    descriptionKey: 'technologies.descriptions.nosql',
-  },
-  {
-    name: 'Python',
-    icon: Code,
-    category: 'Backend',
-    level: 'Intermediate',
-    descriptionKey: 'technologies.descriptions.python',
-  },
-  {
-    name: 'Git & GitHub',
-    icon: GitBranch,
-    category: 'Tools',
-    level: 'Advanced',
-    descriptionKey: 'technologies.descriptions.git',
-  },
-  {
-    name: 'REST APIs',
-    icon: Globe,
-    category: 'Backend',
-    level: 'Advanced',
-    descriptionKey: 'technologies.descriptions.rest',
-  },
-  {
-    name: 'Docker',
-    icon: Layers,
-    category: 'DevOps',
-    level: 'Intermediate',
-    descriptionKey: 'technologies.descriptions.docker',
-  },
-  {
-    name: 'System Design',
-    icon: Settings,
-    category: 'Architecture',
-    level: 'Intermediate',
-    descriptionKey: 'technologies.descriptions.system',
-  },
-  {
-    name: 'Database Design',
-    icon: Database,
-    category: 'Database',
-    level: 'Advanced',
-    descriptionKey: 'technologies.descriptions.dbdesign',
-  },
-]
+import { TECHNOLOGIES, TECHNOLOGY_CATEGORIES } from '@/constants'
+import type { TechnologyCategory } from '@/types'
 
 export function TechnologiesGrid() {
-  const [selectedCategory, setSelectedCategory] = useState('All')
+  const [selectedCategory, setSelectedCategory] = useState<TechnologyCategory | 'All'>('All')
   const { t } = useTranslation()
-
-  const categories = [
-    { key: 'technologies.all', value: 'All' },
-    { key: 'technologies.backend', value: 'Backend' },
-    { key: 'technologies.frontend', value: 'Frontend' },
-    { key: 'technologies.database', value: 'Database' },
-    { key: 'technologies.devops', value: 'DevOps' },
-    { key: 'technologies.tools', value: 'Tools' },
-    { key: 'technologies.architecture', value: 'Architecture' },
-  ]
 
   const filteredTechnologies =
     selectedCategory === 'All'
-      ? technologies
-      : technologies.filter((tech) => tech.category === selectedCategory)
+      ? TECHNOLOGIES
+      : TECHNOLOGIES.filter((tech) => tech.category === selectedCategory)
 
   return (
     <div className="mx-auto w-full">
-      <div className="mb-8 text-center">
-        <h2 className="text-foreground mb-3 text-3xl font-bold">{t('skills.title')}</h2>
-        <p className="text-muted-foreground text-lg">{t('skills.subtitle')}</p>
-      </div>
+      <SectionHeader title={t('skills.title')} subtitle={t('skills.subtitle')} />
 
       {/* Category Filter Buttons */}
       <div className="mb-8 flex flex-wrap justify-center gap-2">
-        {categories.map((category) => (
+        {TECHNOLOGY_CATEGORIES.map((category) => (
           <Button
             key={category.value}
             variant={selectedCategory === category.value ? 'default' : 'outline'}

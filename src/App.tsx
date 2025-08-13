@@ -1,8 +1,5 @@
-import { AboutMe } from './components/system/AboutMe'
-import { FloatingNav } from './components/system/FloatingNav'
-import { Header } from './components/system/Header'
-import { ProjectsSection } from './components/system/ProjectsSection'
-// import { BreadcrumbNav } from './components/system/BreadcrumbNav'
+import { AboutMe, FloatingNav, Header, ProjectsSection } from '@/components/system'
+// import { BreadcrumbNav } from '@/components/system/BreadcrumbNav'
 
 function App() {
   return (
@@ -12,8 +9,10 @@ function App() {
       <FloatingNav />
       {/* Alternative: Use BreadcrumbNav instead - uncomment line below and comment FloatingNav above */}
       {/* <BreadcrumbNav /> */}
-      <AboutMe />
-      <ProjectsSection />
+      <main>
+        <AboutMe />
+        <ProjectsSection />
+      </main>
     </div>
   )
 }

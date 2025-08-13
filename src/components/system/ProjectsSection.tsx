@@ -1,82 +1,26 @@
 import { ExternalLink, Github } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
+import { Section, SectionHeader } from '@/components/shared'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-
-interface Project {
-  id: string
-  titleKey: string
-  descriptionKey: string
-  image: string
-  technologies: string[]
-  githubUrl?: string
-  liveUrl?: string
-  featured?: boolean
-}
-
-const projects: Project[] = [
-  {
-    id: '1',
-    titleKey: 'projectsData.ecommerce.title',
-    descriptionKey: 'projectsData.ecommerce.description',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&q=80',
-    technologies: ['React', 'TypeScript', 'Spring Boot', 'PostgreSQL'],
-    githubUrl: 'https://github.com/username/ecommerce',
-    liveUrl: 'https://ecommerce-demo.com',
-    featured: true,
-  },
-  {
-    id: '2',
-    titleKey: 'projectsData.taskmanager.title',
-    descriptionKey: 'projectsData.taskmanager.description',
-    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop&q=80',
-    technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
-    githubUrl: 'https://github.com/username/taskmanager',
-    liveUrl: 'https://taskmanager-demo.com',
-  },
-  {
-    id: '3',
-    titleKey: 'projectsData.weather.title',
-    descriptionKey: 'projectsData.weather.description',
-    image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=250&fit=crop&q=80',
-    technologies: ['React', 'JavaScript', 'REST API', 'Chart.js'],
-    githubUrl: 'https://github.com/username/weather-dashboard',
-    liveUrl: 'https://weather-dashboard-demo.com',
-  },
-  {
-    id: '4',
-    titleKey: 'projectsData.portfolio.title',
-    descriptionKey: 'projectsData.portfolio.description',
-    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=250&fit=crop&q=80',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-    githubUrl: 'https://github.com/username/portfolio',
-    liveUrl: 'https://portfolio-demo.com',
-  },
-]
+import { PROJECTS } from '@/constants'
+import type { Project } from '@/types'
 
 export function ProjectsSection() {
   const { t } = useTranslation()
 
   return (
-    <section id="projects" className="flex min-h-screen items-center justify-center py-16">
-      <div className="mx-auto w-full max-w-6xl px-4">
-        {/* Section Header */}
-        <div className="mb-16 text-center">
-          <h2 className="text-foreground mb-4 text-3xl font-bold">{t('projects.title')}</h2>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-            {t('projects.subtitle')}
-          </p>
-        </div>
+    <Section id="projects" variant="centered">
+      <SectionHeader title={t('projects.title')} subtitle={t('projects.subtitle')} />
 
-        {/* Projects Grid */}
-        <div className="grid gap-8 md:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
+      {/* Projects Grid */}
+      <div className="grid gap-8 md:grid-cols-2">
+        {PROJECTS.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
       </div>
-    </section>
+    </Section>
   )
 }
 
