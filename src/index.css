@@ -3,6 +3,29 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Smooth scrolling for better navigation experience */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -117,4 +140,54 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Timeline Animations */
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timeline-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawPath 2s ease-out forwards;
+}
+
+.timeline-point {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.floating-dot {
+  animation: float 3s ease-in-out infinite;
+}
+
+.floating-dot:nth-child(2n) {
+  animation-delay: 1s;
+}
+
+.floating-dot:nth-child(3n) {
+  animation-delay: 2s;
 }

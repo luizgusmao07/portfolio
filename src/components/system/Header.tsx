@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 
+import { MinimalTopNav } from './MinimalTopNav'
+
 export function Header() {
   const [isDark, setIsDark] = useState(false)
 
@@ -36,6 +38,11 @@ export function Header() {
             </Avatar>
             <span className="font-semibold">Luiz Gusmão</span>
           </a>
+
+          {/* Center navigation - hidden on mobile */}
+          <div className="hidden md:block">
+            <MinimalTopNav />
+          </div>
 
           <div className="flex items-center gap-2">
             <Button size="icon" variant="ghost" aria-label="Toggle theme" onClick={toggleTheme}>
