@@ -191,3 +191,12 @@ html {
 .floating-dot:nth-child(3n) {
   animation-delay: 2s;
 }
+
+/* Line clamp utility for consistent text truncation */
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}

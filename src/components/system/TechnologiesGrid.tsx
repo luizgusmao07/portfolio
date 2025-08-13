@@ -2,8 +2,6 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { SectionHeader } from '@/components/shared'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
 import { TECHNOLOGIES, TECHNOLOGY_CATEGORIES } from '@/constants'
 import type { TechnologyCategory } from '@/types'
 
@@ -17,59 +15,67 @@ export function TechnologiesGrid() {
       : TECHNOLOGIES.filter((tech) => tech.category === selectedCategory)
 
   return (
-    <div className="mx-auto w-full">
+    <div className="mx-auto w-full max-w-5xl">
       <SectionHeader title={t('skills.title')} subtitle={t('skills.subtitle')} />
 
-      {/* Category Filter Buttons */}
-      <div className="mb-8 flex flex-wrap justify-center gap-2">
+      {/* Category Filter Pills - Consistent Design */}
+      <div className="mb-16 flex flex-wrap justify-center gap-2">
         {TECHNOLOGY_CATEGORIES.map((category) => (
-          <Button
+          <button
             key={category.value}
-            variant={selectedCategory === category.value ? 'default' : 'outline'}
-            size="sm"
             onClick={() => setSelectedCategory(category.value)}
-            className="transition-all duration-300"
+            className={`rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${
+              selectedCategory === category.value
+                ? 'bg-purple-600 text-white shadow-sm hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-400'
+                : 'bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground'
+            }`}
           >
             {t(category.key)}
-          </Button>
+          </button>
         ))}
       </div>
 
-      {/* Technologies Grid with Animation */}
-      <div className="grid min-h-[400px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {/* Technologies Grid - Flat Design */}
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {filteredTechnologies.map((tech, index) => {
           const Icon = tech.icon
           return (
-            <Card
+            <div
               key={`${tech.name}-${selectedCategory}`}
-              className="group transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+              className="group relative h-48"
               style={{
-                animationDelay: `${index * 0.1}s`,
+                animationDelay: `${index * 0.05}s`,
                 opacity: 0,
-                animation: 'fadeInUp 0.6s ease-out forwards',
+                animation: 'fadeInUp 0.4s ease-out forwards',
               }}
             >
-              <CardContent className="p-4">
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0">
-                    <div className="bg-muted hover:bg-accent rounded-lg p-2 transition-colors">
-                      <Icon className="text-muted-foreground group-hover:text-accent-foreground size-5 transition-colors" />
+              <div className="bg-card dark:border-border relative h-full overflow-hidden rounded-xl border p-5 transition-all duration-300 hover:shadow-md hover:shadow-black/5">
+                {/* Purple accent dot */}
+                <div className="absolute top-4 right-4 h-2 w-2 rounded-full bg-purple-600/40 transition-all duration-300 group-hover:scale-125 group-hover:bg-purple-600 dark:bg-purple-400/40 dark:group-hover:bg-purple-400" />
+
+                <div className="relative flex h-full flex-col items-center justify-center text-center">
+                  {/* Icon */}
+                  <div className="mb-3 flex items-center justify-center">
+                    <div className="bg-muted rounded-lg p-3 transition-all duration-300 group-hover:bg-purple-50 dark:group-hover:bg-purple-900/20">
+                      <Icon className="size-6 text-purple-600 transition-colors duration-300 dark:text-purple-400" />
                     </div>
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="mb-2 flex items-center justify-between">
-                      <h3 className="text-foreground truncate font-semibold">{tech.name}</h3>
-                      <span className="bg-secondary text-secondary-foreground rounded-full border px-2 py-1 text-xs font-medium">
+
+                  {/* Content */}
+                  <div className="flex flex-1 flex-col justify-center">
+                    <h3 className="text-foreground mb-2 text-base font-semibold">{tech.name}</h3>
+                    <div className="mb-2 flex justify-center">
+                      <span className="bg-secondary text-secondary-foreground rounded-full px-2 py-1 text-xs font-medium">
                         {t(`technologies.levels.${tech.level.toLowerCase()}`)}
                       </span>
                     </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-muted-foreground line-clamp-2 text-xs leading-relaxed">
                       {t(tech.descriptionKey)}
                     </p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           )
         })}
       </div>
