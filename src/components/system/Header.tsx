@@ -1,14 +1,18 @@
 import { Moon, Sun } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 
+import { LanguageSwitcher } from './LanguageSwitcher'
 import { MinimalTopNav } from './MinimalTopNav'
 
 export function Header() {
   const [isDark, setIsDark] = useState(false)
+  const { t } = useTranslation()
 
   useEffect(() => {
     const root = document.documentElement
@@ -41,7 +45,7 @@ export function Header() {
                     LG
                   </AvatarFallback>
                 </Avatar>
-                <span className="font-semibold">Luiz Gusmão</span>
+                <span className="font-semibold">{t('header.title')}</span>
               </a>
 
               {/* Center navigation - hidden on mobile */}
@@ -50,19 +54,27 @@ export function Header() {
               </div>
 
               <div className="flex items-center gap-2">
-                <Button
-                  size="icon"
-                  variant="ghost"
-                  aria-label="Toggle theme"
-                  onClick={toggleTheme}
-                  className="transition-colors hover:bg-purple-500/10"
-                >
-                  {isDark ? (
-                    <Sun className="size-5 text-purple-600 dark:text-purple-400" />
-                  ) : (
-                    <Moon className="size-5 text-purple-600 dark:text-purple-400" />
-                  )}
-                </Button>
+                <LanguageSwitcher />
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        size="icon"
+                        variant="ghost"
+                        aria-label={t('header.toggleTheme')}
+                        onClick={toggleTheme}
+                        className="transition-colors hover:bg-purple-500/10"
+                      >
+                        {isDark ? (
+                          <Sun className="size-5 text-purple-600 dark:text-purple-400" />
+                        ) : (
+                          <Moon className="size-5 text-purple-600 dark:text-purple-400" />
+                        )}
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>{t('header.toggleTheme')}</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </div>
             </div>
           </CardContent>

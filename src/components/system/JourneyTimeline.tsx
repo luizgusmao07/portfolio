@@ -1,4 +1,8 @@
+import { useTranslation } from 'react-i18next'
+
 export function JourneyTimeline() {
+  const { t } = useTranslation()
+
   return (
     <div className="space-y-8">
       <div className="relative mx-auto h-80 max-w-3xl">
@@ -38,11 +42,11 @@ export function JourneyTimeline() {
           style={{ animationDelay: '0.7s' }}
         >
           <span className="mb-2 inline-block rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-700 dark:bg-purple-900 dark:text-purple-300">
-            Jun 2025 - Present
+            {t('timeline.current.date')}
           </span>
-          <h4 className="text-foreground text-lg font-semibold">Customer Support Engineer</h4>
-          <p className="text-muted-foreground text-sm">CloudWalk, Inc.</p>
-          <p className="text-muted-foreground text-xs opacity-75">Brazilian Fintech • Internship</p>
+          <h4 className="text-foreground text-lg font-semibold">{t('timeline.current.title')}</h4>
+          <p className="text-muted-foreground text-sm">{t('timeline.current.company')}</p>
+          <p className="text-muted-foreground text-xs opacity-75">{t('timeline.current.type')}</p>
         </div>
 
         {/* Education Milestone - Middle of curve */}
@@ -59,11 +63,13 @@ export function JourneyTimeline() {
           style={{ animationDelay: '1.4s' }}
         >
           <span className="mb-2 inline-block rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-700 dark:bg-purple-900 dark:text-purple-300">
-            2025
+            {t('timeline.education.date')}
           </span>
-          <h4 className="text-foreground text-lg font-semibold">Associate Degree</h4>
-          <p className="text-muted-foreground text-sm">Systems Development and Analysis</p>
-          <p className="text-muted-foreground text-xs opacity-75">FATEC São Paulo</p>
+          <h4 className="text-foreground text-lg font-semibold">{t('timeline.education.title')}</h4>
+          <p className="text-muted-foreground text-sm">{t('timeline.education.course')}</p>
+          <p className="text-muted-foreground text-xs opacity-75">
+            {t('timeline.education.institution')}
+          </p>
         </div>
 
         {/* Foundation - Bottom center of curve */}
@@ -80,11 +86,15 @@ export function JourneyTimeline() {
           style={{ animationDelay: '2s' }}
         >
           <span className="mb-2 inline-block rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-700 dark:bg-purple-900 dark:text-purple-300">
-            2022
+            {t('timeline.foundation.date')}
           </span>
-          <h4 className="text-foreground text-lg font-semibold">Technical Course</h4>
-          <p className="text-muted-foreground text-sm">Systems Development</p>
-          <p className="text-muted-foreground text-xs opacity-75">Foundation in programming</p>
+          <h4 className="text-foreground text-lg font-semibold">
+            {t('timeline.foundation.title')}
+          </h4>
+          <p className="text-muted-foreground text-sm">{t('timeline.foundation.course')}</p>
+          <p className="text-muted-foreground text-xs opacity-75">
+            {t('timeline.foundation.description')}
+          </p>
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { ExternalLink, Github, Linkedin, Mail, MapPin } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
@@ -26,6 +27,8 @@ const socialLinks = [
 ]
 
 export function ProfileCard() {
+  const { t } = useTranslation()
+
   return (
     <Card className="h-fit">
       <CardHeader className="pb-4 text-center">
@@ -38,12 +41,12 @@ export function ProfileCard() {
         <CardTitle className="text-xl">Luiz Gusmão</CardTitle>
         <CardDescription className="flex items-center justify-center gap-1">
           <MapPin className="size-3 text-purple-600 dark:text-purple-400" />
-          São Paulo, Brazil
+          {t('common.location')}
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div>
-          <h4 className="mb-2 text-sm font-medium">Connect</h4>
+          <h4 className="mb-2 text-sm font-medium">{t('common.connect')}</h4>
           <div className="space-y-2">
             {socialLinks.map((link) => {
               const Icon = link.icon

@@ -1,22 +1,24 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 
 interface NavItem {
   id: string
-  label: string
+  translationKey: string
   icon: string
 }
 
 const navItems: NavItem[] = [
-  { id: 'about', label: 'About Me', icon: '👋' },
-  { id: 'skills', label: 'Skills & Experience', icon: '⚡' },
-  { id: 'journey', label: 'My Journey', icon: '🚀' },
-  { id: 'projects', label: 'Projects', icon: '💼' },
+  { id: 'about', translationKey: 'nav.about', icon: '👋' },
+  { id: 'skills', translationKey: 'nav.skills', icon: '⚡' },
+  { id: 'journey', translationKey: 'nav.journey', icon: '🚀' },
+  { id: 'projects', translationKey: 'nav.projects', icon: '💼' },
 ]
 
 export function FloatingNav() {
   const [activeSection, setActiveSection] = useState('about')
+  const { t } = useTranslation()
 
   useEffect(() => {
     const observers: IntersectionObserver[] = []
@@ -106,7 +108,7 @@ export function FloatingNav() {
     <TooltipProvider>
       <nav className="fixed top-1/2 right-6 z-50 -translate-y-1/2">
         <div className="bg-background/80 supports-[backdrop-filter]:bg-background/60 flex flex-col items-center gap-3 rounded-full border p-3 shadow-lg backdrop-blur-sm">
-          {navItems.map(({ id, label, icon }) => (
+          {navItems.map(({ id, translationKey, icon }) => (
             <Tooltip key={id} delayDuration={300}>
               <TooltipTrigger asChild>
                 <button
@@ -116,7 +118,7 @@ export function FloatingNav() {
                       ? 'bg-purple-600 text-white shadow-md'
                       : 'text-muted-foreground bg-transparent hover:bg-purple-100 hover:text-purple-600 dark:hover:bg-purple-900/50 dark:hover:text-purple-400'
                   }`}
-                  aria-label={`Navigate to ${label}`}
+                  aria-label={`Navigate to ${t(translationKey)}`}
                 >
                   <span className="text-lg transition-transform duration-300 group-hover:scale-110">
                     {icon}
@@ -124,7 +126,7 @@ export function FloatingNav() {
                 </button>
               </TooltipTrigger>
               <TooltipContent side="left" className="font-medium">
-                {label}
+                {t(translationKey)}
               </TooltipContent>
             </Tooltip>
           ))}

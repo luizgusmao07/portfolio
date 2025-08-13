@@ -1,19 +1,21 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface NavItem {
   id: string
-  label: string
+  translationKey: string
 }
 
 const navItems: NavItem[] = [
-  { id: 'about', label: 'About' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'journey', label: 'Journey' },
-  { id: 'projects', label: 'Projects' },
+  { id: 'about', translationKey: 'nav.about' },
+  { id: 'skills', translationKey: 'nav.skills' },
+  { id: 'journey', translationKey: 'nav.journey' },
+  { id: 'projects', translationKey: 'nav.projects' },
 ]
 
 export function MinimalTopNav() {
   const [activeSection, setActiveSection] = useState('about')
+  const { t } = useTranslation()
 
   useEffect(() => {
     const observers: IntersectionObserver[] = []
@@ -101,7 +103,7 @@ export function MinimalTopNav() {
 
   return (
     <nav className="flex items-center gap-8">
-      {navItems.map(({ id, label }) => (
+      {navItems.map(({ id, translationKey }) => (
         <button
           key={id}
           onClick={() => scrollToSection(id)}
@@ -111,7 +113,7 @@ export function MinimalTopNav() {
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
-          {label}
+          {t(translationKey)}
 
           {/* Animated underline */}
           <span

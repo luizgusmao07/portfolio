@@ -1,18 +1,20 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface NavItem {
   id: string
-  label: string
-  shortLabel: string
+  labelKey: string
+  shortLabelKey: string
 }
 
 const navItems: NavItem[] = [
-  { id: 'about', label: 'About Me', shortLabel: 'About' },
-  { id: 'skills', label: 'Skills & Experience', shortLabel: 'Skills' },
-  { id: 'journey', label: 'My Journey', shortLabel: 'Journey' },
+  { id: 'about', labelKey: 'nav.about', shortLabelKey: 'nav.about' },
+  { id: 'skills', labelKey: 'nav.skills', shortLabelKey: 'skills.title' },
+  { id: 'journey', labelKey: 'nav.journey', shortLabelKey: 'journey.title' },
 ]
 
 export function BreadcrumbNav() {
+  const { t } = useTranslation()
   const [activeSection, setActiveSection] = useState('about')
   const [visitedSections, setVisitedSections] = useState<Set<string>>(new Set(['about']))
 
@@ -64,11 +66,11 @@ export function BreadcrumbNav() {
     <nav className="fixed top-1/2 left-6 z-50 -translate-y-1/2">
       <div className="bg-background/90 flex flex-col gap-4 rounded-lg border p-4 shadow-lg backdrop-blur-sm">
         <div className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">
-          Portfolio Navigation
+          {t('navigation.portfolio')}
         </div>
 
         <div className="flex flex-col gap-3">
-          {navItems.map(({ id, label, shortLabel }, index) => {
+          {navItems.map(({ id, labelKey, shortLabelKey }, index) => {
             const isActive = activeSection === id
             const isVisited = visitedSections.has(id)
             const isPast = index < getCurrentSectionIndex()
@@ -111,8 +113,10 @@ export function BreadcrumbNav() {
                       : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
-                  <div className="text-sm">{shortLabel}</div>
-                  {isActive && <div className="text-muted-foreground mt-1 text-xs">{label}</div>}
+                  <div className="text-sm">{t(shortLabelKey)}</div>
+                  {isActive && (
+                    <div className="text-muted-foreground mt-1 text-xs">{t(labelKey)}</div>
+                  )}
                 </button>
               </div>
             )
@@ -122,7 +126,7 @@ export function BreadcrumbNav() {
         {/* Progress indicator */}
         <div className="mt-2 border-t pt-3">
           <div className="text-muted-foreground flex items-center gap-2 text-xs">
-            <span>Progress</span>
+            <span>{t('navigation.progress')}</span>
             <div className="bg-border h-1 flex-1 overflow-hidden rounded-full">
               <div
                 className="h-full bg-purple-600 transition-all duration-500"

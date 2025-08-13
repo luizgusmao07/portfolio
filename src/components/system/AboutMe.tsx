@@ -1,9 +1,13 @@
+import { useTranslation } from 'react-i18next'
+
 import { AboutContent } from './AboutContent'
 import { JourneyTimeline } from './JourneyTimeline'
 import { ProfileCard } from './ProfileCard'
 import { TechnologiesGrid } from './TechnologiesGrid'
 
 export function AboutMe() {
+  const { t } = useTranslation()
+
   return (
     <>
       {/* First Section - Profile Card and About Content - Full viewport height minus header */}
@@ -31,10 +35,8 @@ export function AboutMe() {
       <section id="journey" className="flex min-h-screen items-center justify-center py-16">
         <div className="mx-auto w-full max-w-6xl px-4">
           <div className="mb-12 text-center">
-            <h2 className="text-foreground mb-3 text-3xl font-bold">My Journey</h2>
-            <p className="text-muted-foreground text-lg">
-              The path that led me to where I am today
-            </p>
+            <h2 className="text-foreground mb-3 text-3xl font-bold">{t('journey.title')}</h2>
+            <p className="text-muted-foreground text-lg">{t('journey.subtitle')}</p>
           </div>
           <div className="flex justify-center">
             <div className="w-full max-w-4xl">

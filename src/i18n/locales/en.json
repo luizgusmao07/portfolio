@@ -1,0 +1,140 @@
+{
+  "nav": {
+    "about": "About Me",
+    "skills": "Skills & Experience",
+    "journey": "My Journey",
+    "projects": "Projects"
+  },
+  "header": {
+    "title": "Luiz Gustavo",
+    "subtitle": "Full Stack Developer",
+    "toggleTheme": "Toggle theme",
+    "toggleLanguage": "Select language"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Get to know me better",
+    "content": {
+      "intro": "I'm a student of Systems Analysis and Development at FATEC Ipiranga and have a technical background in Systems Development.",
+      "passion": "I work as a Customer Support Engineer Intern, serving clients, investigating problems and collaborating in the development of tools that optimize our internal processes and customer experience.",
+      "technologies": "I have experience with modern technologies like React, TypeScript, Java, Spring Boot and various other development tools.",
+      "goal": "I focus on combining technical and personal skills to deliver efficient and useful solutions to customers and the team."
+    }
+  },
+  "skills": {
+    "title": "Technologies & Skills",
+    "subtitle": "A comprehensive overview of my technical expertise",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "tools": "Tools & Others"
+    }
+  },
+  "journey": {
+    "title": "My Journey",
+    "subtitle": "The path that led me to where I am today",
+    "timeline": {
+      "education": {
+        "title": "Education",
+        "description": "Started my journey in computer science and software development"
+      },
+      "firstJob": {
+        "title": "First Professional Experience",
+        "description": "Began working as a developer, learning the fundamentals of software engineering"
+      },
+      "growth": {
+        "title": "Professional Growth",
+        "description": "Expanded my skills in full-stack development and modern technologies"
+      },
+      "current": {
+        "title": "Current Focus",
+        "description": "Focused on creating innovative solutions and continuous learning"
+      }
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "A collection of projects that showcase my skills and passion for creating meaningful digital experiences.",
+    "viewProject": "Live Demo",
+    "viewCode": "Code",
+    "featured": "Featured"
+  },
+  "navigation": {
+    "portfolio": "Portfolio Navigation",
+    "progress": "Progress"
+  },
+  "technologies": {
+    "all": "All",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "database": "Database",
+    "devops": "DevOps",
+    "tools": "Tools",
+    "architecture": "Architecture",
+    "levels": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "descriptions": {
+      "java": "Enterprise applications, Spring ecosystem",
+      "spring": "Boot, Security, Data JPA",
+      "react": "Modern UI development, hooks, context",
+      "typescript": "Type-safe JavaScript development",
+      "sql": "PostgreSQL, MySQL, complex queries",
+      "nosql": "MongoDB, document-oriented databases",
+      "python": "Automation, data processing, APIs",
+      "git": "Version control, collaborative development",
+      "rest": "RESTful services, API design",
+      "docker": "Containerization, microservices",
+      "system": "Scalable applications, design patterns",
+      "dbdesign": "Normalization, optimization, indexing"
+    }
+  },
+  "timeline": {
+    "current": {
+      "date": "Jun 2025 - Present",
+      "title": "Customer Support Engineer",
+      "company": "CloudWalk, Inc.",
+      "type": "Brazilian Fintech • Internship"
+    },
+    "education": {
+      "date": "2025",
+      "title": "Associate Degree",
+      "course": "Systems Development and Analysis",
+      "institution": "FATEC São Paulo"
+    },
+    "foundation": {
+      "date": "2022",
+      "title": "Technical Course",
+      "course": "Systems Development",
+      "description": "Foundation in programming"
+    }
+  },
+  "projectsData": {
+    "ecommerce": {
+      "title": "E-commerce Platform",
+      "description": "A full-stack e-commerce solution built with React and Spring Boot, featuring user authentication, payment integration, and admin dashboard."
+    },
+    "taskmanager": {
+      "title": "Task Management App",
+      "description": "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features."
+    },
+    "weather": {
+      "title": "Weather Dashboard",
+      "description": "A responsive weather dashboard that displays current conditions, forecasts, and interactive maps using third-party APIs."
+    },
+    "portfolio": {
+      "title": "Portfolio Website",
+      "description": "A personal portfolio website showcasing projects and skills, built with modern web technologies and responsive design."
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Try Again",
+    "connect": "Connect",
+    "location": "São Paulo, Brazil"
+  }
+}

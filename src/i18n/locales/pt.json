@@ -1,0 +1,140 @@
+{
+  "nav": {
+    "about": "Sobre Mim",
+    "skills": "Habilidades & Experiência",
+    "journey": "Minha Jornada",
+    "projects": "Projetos"
+  },
+  "header": {
+    "title": "Luiz Gustavo",
+    "subtitle": "Desenvolvedor Full Stack",
+    "toggleTheme": "Alternar tema",
+    "toggleLanguage": "Selecionar idioma"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "subtitle": "Conheça-me melhor",
+    "content": {
+      "intro": "Sou estudante de Análise e Desenvolvimento de Sistemas na FATEC Ipiranga e possuo formação técnica em Desenvolvimento de Sistemas.",
+      "passion": "Atuo como Customer Support Engineer Intern, atendendo clientes, investigando problemas e colaborando e participando do desenvolvimento de ferramentas que otimizam nossos processos internos e a experiência do cliente.",
+      "technologies": "Tenho experiência com tecnologias modernas como React, TypeScript, Java, Spring Boot e várias outras ferramentas de desenvolvimento.",
+      "goal": "Tenho como foco unir habilidades técnicas e pessoais para entregar soluções eficientes e úteis aos clientes e time."
+    }
+  },
+  "skills": {
+    "title": "Habilidades & Tecnologias",
+    "subtitle": "Uma visão abrangente da minha expertise técnica",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Banco de Dados",
+      "tools": "Ferramentas & Outros"
+    }
+  },
+  "journey": {
+    "title": "Minha Jornada",
+    "subtitle": "O caminho que me trouxe até onde estou hoje",
+    "timeline": {
+      "education": {
+        "title": "Educação",
+        "description": "Comecei minha jornada em ciência da computação e desenvolvimento de software"
+      },
+      "firstJob": {
+        "title": "Primeira Experiência Profissional",
+        "description": "Comecei a trabalhar como desenvolvedor, aprendendo os fundamentos da engenharia de software"
+      },
+      "growth": {
+        "title": "Crescimento Profissional",
+        "description": "Expandi minhas habilidades em desenvolvimento full-stack e tecnologias modernas"
+      },
+      "current": {
+        "title": "Foco Atual",
+        "description": "Focado em criar soluções inovadoras e aprendizado contínuo"
+      }
+    }
+  },
+  "projects": {
+    "title": "Projetos em Destaque",
+    "subtitle": "Uma coleção de projetos que demonstram minhas habilidades e paixão por criar experiências digitais significativas.",
+    "viewProject": "Ver Projeto",
+    "viewCode": "Ver Código",
+    "featured": "Destaque"
+  },
+  "navigation": {
+    "portfolio": "Navegação do Portfólio",
+    "progress": "Progresso"
+  },
+  "technologies": {
+    "all": "Todos",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "database": "Banco de Dados",
+    "devops": "DevOps",
+    "tools": "Ferramentas",
+    "architecture": "Arquitetura",
+    "levels": {
+      "beginner": "Iniciante",
+      "intermediate": "Intermediário",
+      "advanced": "Avançado"
+    },
+    "descriptions": {
+      "java": "Aplicações empresariais, ecossistema Spring",
+      "spring": "Boot, Security, Data JPA",
+      "react": "Desenvolvimento de UI moderno, hooks, context",
+      "typescript": "Desenvolvimento JavaScript type-safe",
+      "sql": "PostgreSQL, MySQL, consultas complexas",
+      "nosql": "MongoDB, bancos orientados a documentos",
+      "python": "Automação, processamento de dados, APIs",
+      "git": "Controle de versão, desenvolvimento colaborativo",
+      "rest": "Serviços RESTful, design de APIs",
+      "docker": "Containerização, microsserviços",
+      "system": "Aplicações escaláveis, padrões de design",
+      "dbdesign": "Normalização, otimização, indexação"
+    }
+  },
+  "timeline": {
+    "current": {
+      "date": "Jun 2025 - Presente",
+      "title": "Customer Support Engineer",
+      "company": "CloudWalk, Inc.",
+      "type": "Fintech Brasileira • Estágio"
+    },
+    "education": {
+      "date": "2025",
+      "title": "Tecnólogo",
+      "course": "Análise e Desenvolvimento de Sistemas",
+      "institution": "FATEC São Paulo"
+    },
+    "foundation": {
+      "date": "2022",
+      "title": "Curso Técnico",
+      "course": "Desenvolvimento de Sistemas",
+      "description": "Base em programação"
+    }
+  },
+  "projectsData": {
+    "ecommerce": {
+      "title": "Plataforma E-commerce",
+      "description": "Uma solução de e-commerce full-stack construída com React e Spring Boot, incluindo autenticação de usuários, integração de pagamentos e painel administrativo."
+    },
+    "taskmanager": {
+      "title": "App de Gerenciamento de Tarefas",
+      "description": "Uma aplicação colaborativa de gerenciamento de tarefas com atualizações em tempo real, funcionalidade de arrastar e soltar e recursos de colaboração em equipe."
+    },
+    "weather": {
+      "title": "Dashboard Meteorológico",
+      "description": "Um dashboard meteorológico responsivo que exibe condições atuais, previsões e mapas interativos usando APIs de terceiros."
+    },
+    "portfolio": {
+      "title": "Site Portfólio",
+      "description": "Um site de portfólio pessoal mostrando projetos e habilidades, construído com tecnologias web modernas e design responsivo."
+    }
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Erro",
+    "retry": "Tentar Novamente",
+    "connect": "Conectar",
+    "location": "São Paulo, Brasil"
+  }
+}
