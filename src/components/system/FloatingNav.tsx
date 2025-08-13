@@ -12,6 +12,7 @@ const navItems: NavItem[] = [
   { id: 'about', label: 'About Me', icon: '👋' },
   { id: 'skills', label: 'Skills & Experience', icon: '⚡' },
   { id: 'journey', label: 'My Journey', icon: '🚀' },
+  { id: 'projects', label: 'Projects', icon: '💼' },
 ]
 
 export function FloatingNav() {
@@ -26,14 +27,14 @@ export function FloatingNav() {
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
-              if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+              if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
                 setActiveSection(id)
               }
             })
           },
           {
-            threshold: 0.5,
-            rootMargin: '-10% 0px -10% 0px',
+            threshold: [0, 0.3, 0.5, 0.7, 1],
+            rootMargin: '-20% 0px -20% 0px',
           },
         )
         observer.observe(element)
@@ -41,8 +42,53 @@ export function FloatingNav() {
       }
     })
 
+    // Fallback scroll listener for better detection
+    const handleScroll = () => {
+      const sections = navItems
+        .map(({ id }) => {
+          const element = document.getElementById(id)
+          if (element) {
+            const rect = element.getBoundingClientRect()
+            return {
+              id,
+              top: rect.top,
+              bottom: rect.bottom,
+              height: rect.height,
+            }
+          }
+          return null
+        })
+        .filter(Boolean)
+
+      // Find the section that's most visible in the viewport
+      const viewportHeight = window.innerHeight
+      let mostVisibleSection = sections[0]
+      let maxVisibleArea = 0
+
+      sections.forEach((section) => {
+        if (section) {
+          const visibleTop = Math.max(0, -section.top)
+          const visibleBottom = Math.min(viewportHeight, section.bottom)
+          const visibleHeight = Math.max(0, visibleBottom - visibleTop)
+          const visibleArea = visibleHeight / section.height
+
+          if (visibleArea > maxVisibleArea) {
+            maxVisibleArea = visibleArea
+            mostVisibleSection = section
+          }
+        }
+      })
+
+      if (mostVisibleSection && maxVisibleArea > 0.3) {
+        setActiveSection(mostVisibleSection.id)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
     return () => {
       observers.forEach((observer) => observer.disconnect())
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [])
 
@@ -75,13 +121,6 @@ export function FloatingNav() {
                   <span className="text-lg transition-transform duration-300 group-hover:scale-110">
                     {icon}
                   </span>
-
-                  {/* Active indicator */}
-                  <div
-                    className={`absolute top-1/2 -left-1 h-6 w-1 -translate-y-1/2 rounded-full bg-purple-600 transition-all duration-300 ${
-                      activeSection === id ? 'scale-100 opacity-100' : 'scale-75 opacity-0'
-                    }`}
-                  />
                 </button>
               </TooltipTrigger>
               <TooltipContent side="left" className="font-medium">
@@ -89,20 +128,6 @@ export function FloatingNav() {
               </TooltipContent>
             </Tooltip>
           ))}
-
-          {/* Progress indicator */}
-          <div className="mt-2 flex flex-col items-center gap-1">
-            {navItems.map(({ id }, index) => (
-              <div
-                key={id}
-                className={`h-1 w-1 rounded-full transition-all duration-300 ${
-                  navItems.findIndex((item) => item.id === activeSection) >= index
-                    ? 'bg-purple-600'
-                    : 'bg-border'
-                }`}
-              />
-            ))}
-          </div>
         </div>
       </nav>
     </TooltipProvider>

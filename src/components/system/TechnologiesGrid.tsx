@@ -113,7 +113,7 @@ export function TechnologiesGrid() {
       : technologies.filter((tech) => tech.category === selectedCategory)
 
   return (
-    <div className="mx-auto w-full max-w-5xl">
+    <div className="mx-auto w-full">
       <div className="mb-8 text-center">
         <h2 className="text-foreground mb-3 text-3xl font-bold">Technologies & Skills</h2>
         <p className="text-muted-foreground text-lg">

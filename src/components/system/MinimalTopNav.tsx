@@ -9,6 +9,7 @@ const navItems: NavItem[] = [
   { id: 'about', label: 'About' },
   { id: 'skills', label: 'Skills' },
   { id: 'journey', label: 'Journey' },
+  { id: 'projects', label: 'Projects' },
 ]
 
 export function MinimalTopNav() {
@@ -23,14 +24,14 @@ export function MinimalTopNav() {
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
-              if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+              if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
                 setActiveSection(id)
               }
             })
           },
           {
-            threshold: 0.5,
-            rootMargin: '-10% 0px -10% 0px',
+            threshold: [0, 0.3, 0.5, 0.7, 1],
+            rootMargin: '-20% 0px -20% 0px',
           },
         )
         observer.observe(element)
@@ -38,8 +39,53 @@ export function MinimalTopNav() {
       }
     })
 
+    // Fallback scroll listener for better detection
+    const handleScroll = () => {
+      const sections = navItems
+        .map(({ id }) => {
+          const element = document.getElementById(id)
+          if (element) {
+            const rect = element.getBoundingClientRect()
+            return {
+              id,
+              top: rect.top,
+              bottom: rect.bottom,
+              height: rect.height,
+            }
+          }
+          return null
+        })
+        .filter(Boolean)
+
+      // Find the section that's most visible in the viewport
+      const viewportHeight = window.innerHeight
+      let mostVisibleSection = sections[0]
+      let maxVisibleArea = 0
+
+      sections.forEach((section) => {
+        if (section) {
+          const visibleTop = Math.max(0, -section.top)
+          const visibleBottom = Math.min(viewportHeight, section.bottom)
+          const visibleHeight = Math.max(0, visibleBottom - visibleTop)
+          const visibleArea = visibleHeight / section.height
+
+          if (visibleArea > maxVisibleArea) {
+            maxVisibleArea = visibleArea
+            mostVisibleSection = section
+          }
+        }
+      })
+
+      if (mostVisibleSection && maxVisibleArea > 0.3) {
+        setActiveSection(mostVisibleSection.id)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
     return () => {
       observers.forEach((observer) => observer.disconnect())
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [])
 
