@@ -6,7 +6,7 @@
     "projects": "Projects"
   },
   "header": {
-    "title": "Luiz Gustavo",
+    "title": "Luiz Gusmão",
     "subtitle": "Full Stack Developer",
     "toggleTheme": "Toggle theme",
     "toggleLanguage": "Select language"
@@ -97,19 +97,45 @@
       "date": "Jun 2025 - Present",
       "title": "Customer Support Engineer",
       "company": "CloudWalk, Inc.",
-      "type": "Brazilian Fintech • Internship"
+      "type": "Brazilian Fintech • Internship",
+      "description": "Working as a Customer Support Engineer Intern, serving clients, investigating problems and collaborating in the development of tools that optimize internal processes and customer experience.",
+      "achievements": [
+        "Customer support and problem resolution",
+        "Internal tools development",
+        "Process optimization",
+        "Cross-team collaboration"
+      ],
+      "technologies": ["Python", "SQL", "REST APIs", "Customer Support Tools"]
     },
     "education": {
       "date": "2025",
       "title": "Associate Degree",
       "course": "Systems Development and Analysis",
-      "institution": "FATEC São Paulo"
+      "institution": "FATEC São Paulo",
+      "type": "Higher Education",
+      "description": "Currently pursuing a degree in Systems Analysis and Development, focusing on modern software development practices and methodologies.",
+      "achievements": [
+        "Advanced programming concepts",
+        "Software architecture and design",
+        "Database management",
+        "Project management methodologies"
+      ],
+      "technologies": ["Java", "Spring Boot", "React", "SQL", "Software Engineering"]
     },
     "foundation": {
       "date": "2022",
       "title": "Technical Course",
       "course": "Systems Development",
-      "description": "Foundation in programming"
+      "institution": "Technical School",
+      "type": "Technical Education",
+      "description": "Completed technical course in Systems Development, establishing the foundation in programming and software development principles.",
+      "achievements": [
+        "Programming fundamentals",
+        "Web development basics",
+        "Database concepts",
+        "Software development lifecycle"
+      ],
+      "technologies": ["JavaScript", "HTML/CSS", "PHP", "MySQL", "Basic Programming"]
     }
   },
   "projectsData": {
@@ -123,6 +149,7 @@
     "error": "Error",
     "retry": "Try Again",
     "connect": "Connect",
-    "location": "São Paulo, Brazil"
+    "location": "São Paulo, Brazil",
+    "clickMe": "Click me"
   }
 }

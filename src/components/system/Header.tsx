@@ -20,15 +20,15 @@ export function Header() {
         <Card className="bg-background/95 supports-[backdrop-filter]:bg-background/80 border-border/40 shadow-lg backdrop-blur-sm">
           <CardContent className="px-3 py-2">
             <div className="flex items-center justify-between">
-              <a href="#" className="flex items-center gap-2 transition-opacity hover:opacity-80">
+              <div className="flex items-center gap-2 transition-opacity hover:opacity-80">
                 <Avatar className="h-8 w-8 ring-2 ring-purple-500/20">
-                  <AvatarImage />
+                  <AvatarImage src="/1738032364552.jpg" alt="Luiz Gusmão" />
                   <AvatarFallback className="bg-gradient-to-br from-purple-500 to-pink-500 text-sm text-white">
                     LG
                   </AvatarFallback>
                 </Avatar>
                 <span className="font-semibold">{t('header.title')}</span>
-              </a>
+              </div>
 
               {/* Center navigation - hidden on mobile */}
               <div className="hidden md:block">

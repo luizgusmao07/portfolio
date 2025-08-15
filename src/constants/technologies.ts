@@ -32,7 +32,7 @@ export const TECHNOLOGIES: Technology[] = [
     name: 'React',
     icon: Palette,
     category: 'Frontend',
-    level: 'Intermediate',
+    level: 'Advanced',
     descriptionKey: 'technologies.descriptions.react',
   },
   {
@@ -46,7 +46,7 @@ export const TECHNOLOGIES: Technology[] = [
     name: 'SQL Databases',
     icon: Table,
     category: 'Database',
-    level: 'Advanced',
+    level: 'Intermediate',
     descriptionKey: 'technologies.descriptions.sql',
   },
   {
@@ -60,14 +60,14 @@ export const TECHNOLOGIES: Technology[] = [
     name: 'Python',
     icon: Code,
     category: 'Backend',
-    level: 'Intermediate',
+    level: 'Beginner',
     descriptionKey: 'technologies.descriptions.python',
   },
   {
     name: 'Git & GitHub',
     icon: GitBranch,
     category: 'Tools',
-    level: 'Advanced',
+    level: 'Intermediate',
     descriptionKey: 'technologies.descriptions.git',
   },
   {
@@ -95,7 +95,7 @@ export const TECHNOLOGIES: Technology[] = [
     name: 'Database Design',
     icon: Database,
     category: 'Database',
-    level: 'Advanced',
+    level: 'Intermediate',
     descriptionKey: 'technologies.descriptions.dbdesign',
   },
 ]

@@ -6,7 +6,7 @@
     "projects": "Projetos"
   },
   "header": {
-    "title": "Luiz Gustavo",
+    "title": "Luiz Gusmão",
     "subtitle": "Desenvolvedor Full Stack",
     "toggleTheme": "Alternar tema",
     "toggleLanguage": "Selecionar idioma"
@@ -97,19 +97,45 @@
       "date": "Jun 2025 - Presente",
       "title": "Customer Support Engineer",
       "company": "CloudWalk, Inc.",
-      "type": "Fintech Brasileira • Estágio"
+      "type": "Fintech Brasileira • Estágio",
+      "description": "Atuando como estagiário de Customer Support Engineer, atendendo clientes, investigando problemas e colaborando no desenvolvimento de ferramentas que otimizam processos internos e experiência do cliente.",
+      "achievements": [
+        "Suporte ao cliente e resolução de problemas",
+        "Desenvolvimento de ferramentas internas",
+        "Otimização de processos",
+        "Colaboração entre equipes"
+      ],
+      "technologies": ["Python", "SQL", "APIs REST", "Ferramentas de Suporte"]
     },
     "education": {
       "date": "2025",
       "title": "Tecnólogo",
       "course": "Análise e Desenvolvimento de Sistemas",
-      "institution": "FATEC São Paulo"
+      "institution": "FATEC São Paulo",
+      "type": "Ensino Superior",
+      "description": "Cursando tecnólogo em Análise e Desenvolvimento de Sistemas, focando em práticas modernas de desenvolvimento de software e metodologias.",
+      "achievements": [
+        "Conceitos avançados de programação",
+        "Arquitetura e design de software",
+        "Gerenciamento de banco de dados",
+        "Metodologias de gestão de projetos"
+      ],
+      "technologies": ["Java", "Spring Boot", "React", "SQL", "Engenharia de Software"]
     },
     "foundation": {
       "date": "2022",
       "title": "Curso Técnico",
       "course": "Desenvolvimento de Sistemas",
-      "description": "Base em programação"
+      "institution": "Escola Técnica",
+      "type": "Ensino Técnico",
+      "description": "Concluído curso técnico em Desenvolvimento de Sistemas, estabelecendo a base em programação e princípios de desenvolvimento de software.",
+      "achievements": [
+        "Fundamentos de programação",
+        "Básico de desenvolvimento web",
+        "Conceitos de banco de dados",
+        "Ciclo de vida do desenvolvimento de software"
+      ],
+      "technologies": ["JavaScript", "HTML/CSS", "PHP", "MySQL", "Programação Básica"]
     }
   },
   "projectsData": {
@@ -123,6 +149,7 @@
     "error": "Erro",
     "retry": "Tentar Novamente",
     "connect": "Conectar",
-    "location": "São Paulo, Brasil"
+    "location": "São Paulo, Brasil",
+    "clickMe": "Clique aqui"
   }
 }

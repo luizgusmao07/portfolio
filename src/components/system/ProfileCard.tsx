@@ -34,7 +34,7 @@ export function ProfileCard() {
       <CardHeader className="pb-4 text-center">
         <div className="mb-4 flex justify-center">
           <Avatar className="size-24">
-            <AvatarImage />
+            <AvatarImage src="/1738032364552.jpg" alt="Luiz Gusmão" />
             <AvatarFallback className="text-lg">LG</AvatarFallback>
           </Avatar>
         </div>
