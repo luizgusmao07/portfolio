@@ -37,8 +37,10 @@ export interface Project {
   titleKey: string
   descriptionKey: string
   image: string
+  images?: string[]
   technologies: string[]
   githubUrl?: string
+  githubUrls?: Array<{ label: string; url: string }>
   liveUrl?: string
   featured?: boolean
 }

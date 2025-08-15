@@ -113,21 +113,9 @@
     }
   },
   "projectsData": {
-    "ecommerce": {
-      "title": "Plataforma E-commerce",
-      "description": "Uma solução de e-commerce full-stack construída com React e Spring Boot, incluindo autenticação de usuários, integração de pagamentos e painel administrativo."
-    },
-    "taskmanager": {
-      "title": "App de Gerenciamento de Tarefas",
-      "description": "Uma aplicação colaborativa de gerenciamento de tarefas com atualizações em tempo real, funcionalidade de arrastar e soltar e recursos de colaboração em equipe."
-    },
-    "weather": {
-      "title": "Dashboard Meteorológico",
-      "description": "Um dashboard meteorológico responsivo que exibe condições atuais, previsões e mapas interativos usando APIs de terceiros."
-    },
-    "portfolio": {
-      "title": "Site Portfólio",
-      "description": "Um site de portfólio pessoal mostrando projetos e habilidades, construído com tecnologias web modernas e design responsivo."
+    "weunite": {
+      "title": "WeUnite",
+      "description": "Uma plataforma de mídia social projetada especificamente para atletas mostrarem seus talentos, se conectarem com comunidades esportivas e descobrirem oportunidades para avanço na carreira e patrocínios."
     }
   },
   "common": {
