@@ -21,9 +21,6 @@ A modern, responsive personal portfolio built with cutting-edge technologies. Sh
 
 ## 🖼️ Screenshots
 
-<!-- Add your screenshots here -->
-
-![Portfolio Screenshot](./public/1738032364552.jpg)
 ![Portfolio Dark Mode](./public/1752088655016.jpg)
 
 ## 🛠️ Tech Stack
