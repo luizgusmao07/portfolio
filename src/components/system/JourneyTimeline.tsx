@@ -40,7 +40,7 @@ export function JourneyTimeline() {
       id: 'current',
       position: {
         point: 'absolute top-8 left-1/2 z-10 -translate-x-1/2 transform',
-        content: 'absolute top-4 right-8 max-w-xs text-right',
+        content: 'absolute top-4 right-2 md:right-8 max-w-[180px] md:max-w-xs text-right',
       },
       animationDelay: '0.7s',
     },
@@ -48,7 +48,8 @@ export function JourneyTimeline() {
       id: 'education',
       position: {
         point: 'absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 transform',
-        content: 'absolute top-1/2 left-8 max-w-xs -translate-y-1/2 transform text-left',
+        content:
+          'absolute top-1/2 left-2 md:left-8 max-w-[180px] md:max-w-xs -translate-y-1/2 transform text-left',
       },
       animationDelay: '1.2s',
     },
@@ -56,7 +57,7 @@ export function JourneyTimeline() {
       id: 'foundation',
       position: {
         point: 'absolute bottom-8 left-1/2 z-10 -translate-x-1/2 transform',
-        content: 'absolute right-8 bottom-4 max-w-xs text-right',
+        content: 'absolute right-2 md:right-8 bottom-4 max-w-[180px] md:max-w-xs text-right',
       },
       animationDelay: '1.8s',
     },
@@ -87,7 +88,7 @@ export function JourneyTimeline() {
 
               {/* Minimalist "click me" indicator - only on first point */}
               {experienceId === 'current' && (
-                <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                <div className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap md:-top-10">
                   <span className="animate-pulse rounded-full border border-purple-200/40 px-2 py-1 text-xs font-medium text-purple-500/70 shadow-sm transition-colors duration-300 group-hover:border-purple-300/60 group-hover:text-purple-600 dark:border-purple-700/40 dark:text-purple-400/70 dark:group-hover:border-purple-600/60 dark:group-hover:text-purple-300">
                     {t('common.clickMe')}
                   </span>
@@ -176,8 +177,36 @@ export function JourneyTimeline() {
   }
 
   return (
-    <div className="space-y-8">
-      <div className="relative mx-auto h-80 max-w-3xl">
+    <div className="space-y-8 px-4 md:px-2">
+      {/* Mobile Timeline - Vertical Stack */}
+      <div className="block space-y-6 md:hidden">
+        {timelinePoints.map((point) => (
+          <div key={point.id} className="relative flex items-start gap-4">
+            {/* Vertical line connector */}
+            <div className="absolute top-8 left-2 h-16 w-0.5 bg-gradient-to-b from-purple-400 to-purple-300 opacity-30" />
+            <div className="relative z-10 mt-1 flex-shrink-0">
+              {renderExperienceDialog(point.id)}
+            </div>
+            <div className="min-w-0 flex-1">
+              <span className="mb-2 inline-block rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-700 dark:bg-purple-900 dark:text-purple-300">
+                {t(`timeline.${point.id}.date`)}
+              </span>
+              <h4 className="text-foreground text-base font-semibold">
+                {t(`timeline.${point.id}.title`)}
+              </h4>
+              <p className="text-muted-foreground text-sm">
+                {t(`timeline.${point.id}.company`, '') || t(`timeline.${point.id}.course`, '')}
+              </p>
+              <p className="text-muted-foreground text-xs opacity-75">
+                {t(`timeline.${point.id}.type`, '') || t(`timeline.${point.id}.institution`, '')}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop Timeline - Curved Path */}
+      <div className="relative mx-auto hidden h-64 w-full max-w-3xl overflow-hidden md:block md:h-80">
         {/* Curved Path SVG */}
         <svg
           className="absolute inset-0 h-full w-full"
@@ -185,7 +214,7 @@ export function JourneyTimeline() {
           preserveAspectRatio="xMidYMid meet"
         >
           <path
-            d="M 200 40 Q 120 100 200 160 Q 280 220 200 280"
+            d="M 200 40 Q 150 100 200 160 Q 250 220 200 280"
             stroke="url(#gradient)"
             strokeWidth="3"
             fill="none"

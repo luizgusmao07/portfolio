@@ -12,21 +12,21 @@ export function FloatingNav() {
 
   return (
     <TooltipProvider>
-      <nav className="fixed top-1/2 right-6 z-50 -translate-y-1/2">
-        <div className="bg-background/80 supports-[backdrop-filter]:bg-background/60 flex flex-col items-center gap-3 rounded-full border p-3 shadow-lg backdrop-blur-sm">
+      <nav className="fixed top-1/2 right-4 z-50 -translate-y-1/2 md:right-6">
+        <div className="bg-background/80 supports-[backdrop-filter]:bg-background/60 flex flex-col items-center gap-2 rounded-full border p-2 shadow-lg backdrop-blur-sm md:gap-3 md:p-3">
           {NAVIGATION_ITEMS.map(({ id, labelKey, icon: Icon }) => (
             <Tooltip key={id} delayDuration={300}>
               <TooltipTrigger asChild>
                 <button
                   onClick={() => scrollToSection(id as SectionId)}
-                  className={`group relative flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 hover:scale-110 ${
+                  className={`group relative flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 hover:scale-110 md:h-12 md:w-12 ${
                     activeSection === id
                       ? 'bg-purple-600 text-white shadow-md'
                       : 'text-muted-foreground bg-transparent hover:bg-purple-100 hover:text-purple-600 dark:hover:bg-purple-900/50 dark:hover:text-purple-400'
                   }`}
                   aria-label={`Navigate to ${t(labelKey)}`}
                 >
-                  <Icon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                  <Icon className="h-4 w-4 transition-transform duration-300 group-hover:scale-110 md:h-5 md:w-5" />
                 </button>
               </TooltipTrigger>
               <TooltipContent side="left" className="font-medium">

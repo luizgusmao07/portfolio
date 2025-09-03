@@ -15,7 +15,7 @@ export function Header() {
   const { t } = useTranslation()
 
   return (
-    <header className="sticky top-4 z-10">
+    <header className="sticky top-2 z-10 md:top-4">
       <div className="mx-auto w-full max-w-6xl px-4">
         <Card className="bg-background/95 supports-[backdrop-filter]:bg-background/80 border-border/40 shadow-lg backdrop-blur-sm">
           <CardContent className="px-3 py-2">

@@ -12,13 +12,13 @@ const ProjectsSection = lazy(() =>
 
 function App() {
   return (
-    <div className="bg-background min-h-screen">
+    <div className="bg-background min-h-screen overflow-x-hidden">
       <Header />
       {/* Floating navigation - shows on right side for all screen sizes */}
       <FloatingNav />
       {/* Alternative: Use BreadcrumbNav instead - uncomment line below and comment FloatingNav above */}
       {/* <BreadcrumbNav /> */}
-      <main>
+      <main className="pt-2 md:pt-0">
         <Suspense
           fallback={<div className="flex h-32 items-center justify-center">Loading...</div>}
         >
