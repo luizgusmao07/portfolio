@@ -30,7 +30,7 @@ export function LanguageSwitcher() {
           aria-label={t('header.toggleLanguage')}
         >
           <span className="text-lg">{currentLangData?.flag || '🌐'}</span>
-          <ChevronDown className="h-3 w-3 opacity-50" />
+          <ChevronDown className="h-3 w-3 text-purple-600 dark:text-purple-400" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-[140px]">
