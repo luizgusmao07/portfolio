@@ -19,13 +19,6 @@ A modern, responsive personal portfolio built with cutting-edge technologies. Sh
 - ⚡ **Fast Performance**: Vite-powered build with optimized assets
 - 🔧 **Developer Experience**: TypeScript, ESLint, Prettier, and Husky pre-commit hooks
 
-## 🖼️ Screenshots
-
-<!-- Add your screenshots here -->
-
-![Portfolio Screenshot](./public/1738032364552.jpg)
-![Portfolio Dark Mode](./public/1752088655016.jpg)
-
 ## 🛠️ Tech Stack
 
 ### Frontend Framework
