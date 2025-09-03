@@ -4,7 +4,7 @@ Modern personal portfolio built with React, Vite, Tailwind CSS v4, and shadcn/ui
 
 ## Live demo
 
-- URL: add your deployed link here
+- URL: https://portfolio-luiz-murex.vercel.app/
 
 ## Features
 
