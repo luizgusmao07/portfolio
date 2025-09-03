@@ -18,7 +18,7 @@ export function AboutMe() {
           <div className="max-h-[400px] overflow-hidden md:max-h-[600px]">
             <ProfileCard />
           </div>
-          <div className="max-h-[400px] overflow-y-auto md:max-h-[600px]">
+          <div>
             <AboutContent />
           </div>
         </div>
