@@ -96,43 +96,54 @@ export function JourneyTimeline() {
             </div>
           </button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[500px]">
-          <DialogHeader>
-            <div className="flex flex-col gap-2">
-              <Badge variant="secondary" className="w-fit">
+        <DialogContent className="gap-0 p-0 sm:max-w-[420px]">
+          <DialogHeader className="border-b border-purple-100 p-6 pb-4 dark:border-purple-800">
+            <div className="flex flex-col gap-1">
+              <Badge
+                variant="outline"
+                className="w-fit border-purple-300 text-purple-700 dark:border-purple-700 dark:text-purple-300"
+              >
                 {experience.date}
               </Badge>
-              <DialogTitle className="text-xl font-bold">{experience.title}</DialogTitle>
+              <DialogTitle className="text-lg font-semibold text-purple-900 dark:text-purple-100">
+                {experience.title}
+              </DialogTitle>
               {experience.company && (
-                <p className="text-muted-foreground text-lg font-medium">{experience.company}</p>
+                <p className="text-sm font-medium text-purple-600 dark:text-purple-400">
+                  {experience.company}
+                </p>
               )}
               {experience.course && (
-                <p className="text-muted-foreground text-lg font-medium">{experience.course}</p>
+                <p className="text-sm font-medium text-purple-600 dark:text-purple-400">
+                  {experience.course}
+                </p>
               )}
               {experience.institution && (
-                <p className="text-muted-foreground text-sm">{experience.institution}</p>
+                <p className="text-muted-foreground text-xs">{experience.institution}</p>
               )}
               {experience.type && (
-                <p className="text-muted-foreground text-sm">{experience.type}</p>
+                <p className="text-muted-foreground text-xs">{experience.type}</p>
               )}
             </div>
           </DialogHeader>
 
-          <div className="space-y-4">
-            <DialogDescription className="text-base leading-relaxed">
+          <div className="space-y-3 p-6 pt-4">
+            <DialogDescription className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
               {experience.description}
             </DialogDescription>
 
             {experience.achievements && experience.achievements.length > 0 && (
               <div>
-                <h4 className="text-foreground mb-3 text-sm font-semibold">Key Achievements</h4>
-                <ul className="space-y-2">
+                <h4 className="mb-2 text-xs font-medium tracking-wide text-purple-700 uppercase dark:text-purple-300">
+                  {t('common.keyAchievements')}
+                </h4>
+                <ul className="space-y-1">
                   {experience.achievements.map((achievement: string, index: number) => (
                     <li
                       key={index}
-                      className="text-muted-foreground flex items-start gap-2 text-sm"
+                      className="flex items-start gap-2 text-xs text-gray-600 dark:text-gray-400"
                     >
-                      <div className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-purple-500" />
+                      <div className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-purple-500" />
                       {achievement}
                     </li>
                   ))}
@@ -142,12 +153,16 @@ export function JourneyTimeline() {
 
             {experience.technologies && experience.technologies.length > 0 && (
               <div>
-                <h4 className="text-foreground mb-3 text-sm font-semibold">
-                  Technologies & Skills
+                <h4 className="mb-2 text-xs font-medium tracking-wide text-purple-700 uppercase dark:text-purple-300">
+                  {t('common.technologiesSkills')}
                 </h4>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1">
                   {experience.technologies.map((tech: string, index: number) => (
-                    <Badge key={index} variant="outline" className="text-xs">
+                    <Badge
+                      key={index}
+                      variant="outline"
+                      className="border-purple-200 px-2 py-0.5 text-xs text-purple-700 hover:bg-purple-50 dark:border-purple-700 dark:text-purple-300 dark:hover:bg-purple-900/20"
+                    >
                       {tech}
                     </Badge>
                   ))}

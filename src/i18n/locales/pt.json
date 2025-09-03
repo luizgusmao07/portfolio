@@ -127,7 +127,6 @@
       "title": "Curso Técnico",
       "course": "Desenvolvimento de Sistemas",
       "institution": "Escola Técnica",
-      "type": "Ensino Técnico",
       "description": "Concluído curso técnico em Desenvolvimento de Sistemas, estabelecendo a base em programação e princípios de desenvolvimento de software.",
       "achievements": [
         "Fundamentos de programação",
@@ -150,6 +149,8 @@
     "retry": "Tentar Novamente",
     "connect": "Conectar",
     "location": "São Paulo, Brasil",
-    "clickMe": "Clique aqui"
+    "clickMe": "Clique aqui",
+    "keyAchievements": "Principais Conquistas",
+    "technologiesSkills": "Tecnologias e Habilidades"
   }
 }

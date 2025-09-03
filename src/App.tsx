@@ -1,5 +1,14 @@
-import { AboutMe, FloatingNav, Header, ProjectsSection } from '@/components/system'
-// import { BreadcrumbNav } from '@/components/system/BreadcrumbNav'
+import { lazy, Suspense } from 'react'
+
+import { FloatingNav, Header } from '@/components/system'
+
+// Lazy load components for better performance
+const AboutMe = lazy(() =>
+  import('@/components/system/AboutMe').then((m) => ({ default: m.AboutMe })),
+)
+const ProjectsSection = lazy(() =>
+  import('@/components/system/ProjectsSection').then((m) => ({ default: m.ProjectsSection })),
+)
 
 function App() {
   return (
@@ -10,8 +19,16 @@ function App() {
       {/* Alternative: Use BreadcrumbNav instead - uncomment line below and comment FloatingNav above */}
       {/* <BreadcrumbNav /> */}
       <main>
-        <AboutMe />
-        <ProjectsSection />
+        <Suspense
+          fallback={<div className="flex h-32 items-center justify-center">Loading...</div>}
+        >
+          <AboutMe />
+        </Suspense>
+        <Suspense
+          fallback={<div className="flex h-32 items-center justify-center">Loading...</div>}
+        >
+          <ProjectsSection />
+        </Suspense>
       </main>
     </div>
   )

@@ -127,7 +127,6 @@
       "title": "Technical Course",
       "course": "Systems Development",
       "institution": "Technical School",
-      "type": "Technical Education",
       "description": "Completed technical course in Systems Development, establishing the foundation in programming and software development principles.",
       "achievements": [
         "Programming fundamentals",
@@ -150,6 +149,8 @@
     "retry": "Try Again",
     "connect": "Connect",
     "location": "São Paulo, Brazil",
-    "clickMe": "Click me"
+    "clickMe": "Click me",
+    "keyAchievements": "Key Achievements",
+    "technologiesSkills": "Technologies & Skills"
   }
 }

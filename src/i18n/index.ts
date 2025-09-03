@@ -33,3 +33,4 @@ i18n
   })
 
 export default i18n
+export { useLanguage } from './useLanguage'

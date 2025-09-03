@@ -28,7 +28,6 @@ export function Carousel({ images, alt, className = '' }: CarouselProps) {
             alt={alt}
             className="h-full w-full rounded-lg object-cover"
             onClick={() => {
-              console.log('Single image clicked')
               setModalImageIndex(0)
               setIsModalOpen(true)
             }}
@@ -55,7 +54,6 @@ export function Carousel({ images, alt, className = '' }: CarouselProps) {
   }
 
   const openModal = (index: number) => {
-    console.log('Opening modal with image index:', index)
     setModalImageIndex(index)
     setIsModalOpen(true)
   }
@@ -143,8 +141,6 @@ function ImageModal({
   onIndexChange,
   alt,
 }: ImageModalProps) {
-  console.log('ImageModal rendered:', { isOpen, currentIndex, imagesLength: images.length })
-
   // Throttling for scroll events
   const lastScrollTime = useRef(0)
   const scrollCooldown = 300 // ms between scroll events

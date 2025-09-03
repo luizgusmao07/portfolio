@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { useLanguage } from '@/i18n/LanguageContext'
+import { useLanguage } from '@/i18n'
 
 export function LanguageSwitcher() {
   const { t } = useTranslation()
@@ -17,7 +17,6 @@ export function LanguageSwitcher() {
   const currentLangData = availableLanguages.find((lang) => lang.code === currentLanguage)
 
   const handleLanguageChange = (languageCode: string) => {
-    console.log('Changing language to:', languageCode) // Debug log
     changeLanguage(languageCode)
   }
 

@@ -7,6 +7,9 @@ export * from './technologies'
 // Project constants
 export * from './projects'
 
+// Accessibility constants
+export * from './accessibility'
+
 // App configuration constants
 export const APP_CONFIG = {
   name: 'Portfolio',
