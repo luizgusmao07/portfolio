@@ -21,7 +21,6 @@ export function Header({ language, onToggleLanguage }: HeaderProps) {
     { label: content.nav.experience, href: '#experience' },
     { label: content.nav.skills, href: '#skills' },
     { label: content.nav.education, href: '#education' },
-    { label: content.nav.contact, href: '#contact' },
   ]
 
   return (

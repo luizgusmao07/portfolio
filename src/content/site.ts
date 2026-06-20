@@ -29,7 +29,6 @@ export const siteContent = {
       experience: 'Experiência',
       skills: 'Skills',
       education: 'Formação',
-      contact: 'Contato',
     },
     actions: {
       viewLinkedIn: 'Ver LinkedIn',
@@ -43,7 +42,7 @@ export const siteContent = {
       title: 'Construindo experiências mobile simples, rápidas e confiáveis.',
       subtitle:
         'Sou Mobile Software Engineer na CloudWalk, atuando em produtos como InfinitePay e JIM US com Flutter, Dart, Rust e desenvolvimento assistido por IA.',
-      availability: 'São Paulo, Brasil · Aberto a conversas sobre mobile, produto e tecnologia',
+      availability: 'São Paulo, Brasil',
     },
     about: {
       label: 'Sobre',
@@ -68,11 +67,6 @@ export const siteContent = {
       label: 'Formação',
       title: 'Base acadêmica',
     },
-    contact: {
-      title: 'Vamos conversar?',
-      description:
-        'Para contato profissional, o melhor caminho é LinkedIn ou email. O GitHub fica disponível como referência técnica.',
-    },
   },
   en: {
     nav: {
@@ -80,7 +74,6 @@ export const siteContent = {
       experience: 'Experience',
       skills: 'Skills',
       education: 'Education',
-      contact: 'Contact',
     },
     actions: {
       viewLinkedIn: 'View LinkedIn',
@@ -94,8 +87,7 @@ export const siteContent = {
       title: 'Building simple, fast and reliable mobile experiences.',
       subtitle:
         'I am a Mobile Software Engineer at CloudWalk, working on products such as InfinitePay and JIM US with Flutter, Dart, Rust and AI-assisted development.',
-      availability:
-        'São Paulo, Brazil · Open to conversations about mobile, product and technology',
+      availability: 'São Paulo, Brazil',
     },
     about: {
       label: 'About',
@@ -119,11 +111,6 @@ export const siteContent = {
     education: {
       label: 'Education',
       title: 'Academic background',
-    },
-    contact: {
-      title: 'Let’s talk?',
-      description:
-        'For professional contact, LinkedIn or email are the best channels. GitHub is available as a technical reference.',
     },
   },
 } as const
