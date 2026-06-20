@@ -146,7 +146,7 @@ Estas etapas dependem de push/merge e/ou configuração no GitHub:
 - [x] Workflow de CI existe.
 - [x] CI configurado para pull requests.
 - [x] CI configurado para push em `master`.
-- [ ] CI confirmado como verde no GitHub após push.
+- [ ] CI confirmado como verde no GitHub após push em `master`.
 - [ ] Status check do CI usado na proteção da branch master.
 
 ### Fase 7 — Migração de deploy fora da Vercel
@@ -154,15 +154,15 @@ Estas etapas dependem de push/merge e/ou configuração no GitHub:
 - [x] Workflow de deploy existe.
 - [x] Vite aceita `BASE_PATH`.
 - [ ] GitHub Pages habilitado no GitHub.
-- [ ] Deploy confirmado após merge na `master`.
-- [ ] Site publicado validado na nova URL.
+- [ ] Deploy confirmado após push em `master`.
+- [ ] Site publicado em `https://luizgusmao07.github.io/portfolio/`.
 - [ ] Vercel removida, desativada ou documentada como legado.
 
 ### Fase 8 — Configurações do GitHub
 
 - [ ] Branch protection/ruleset ativo para `main`.
-- [ ] PR obrigatório antes de merge.
-- [ ] CI obrigatório antes de merge.
+- [ ] PR recomendado para alterações futuras; administradores ainda conseguem manutenção direta.
+- [ ] CI `quality` obrigatório em `master`.
 - [ ] Force push bloqueado.
 - [ ] Deleção da branch bloqueada.
 - [x] Dependabot configurado.
@@ -172,17 +172,17 @@ Estas etapas dependem de push/merge e/ou configuração no GitHub:
 
 - [x] `CHANGELOG.md` existe.
 - [x] Versão `v1.1.0` documentada no changelog.
-- [ ] Tag criada.
-- [ ] Release criada no GitHub.
-- [ ] Release notes publicadas no GitHub.
+- [ ] Tag `v1.1.0` pendente de criação após esta atualização final.
+- [ ] Release pendente de criação após esta atualização final.
+- [ ] Release notes pendentes de publicação após esta atualização final.
 
 ### Fase 10 — Revisão final e handoff
 
 - [x] Validação local concluída.
 - [x] Documentação atualizada.
 - [ ] Site publicado reflete o perfil profissional atual.
-- [ ] PR, CI, merge e deploy confirmados remotamente.
-- [ ] Nenhuma pendência crítica permanece aberta após configuração remota.
+- [ ] CI e deploy confirmados remotamente em `master`.
+- [ ] Não há pendência crítica de implementação; resta desativar Vercel manualmente se desejado.
 
 ## Histórico de atualizações deste documento
 
