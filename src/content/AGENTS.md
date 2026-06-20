@@ -4,21 +4,17 @@
 
 This module is the source of truth for portfolio content.
 
-It contains professional data used by the UI, such as:
+It contains professional data and localized UI copy used by the app, such as:
 
 - Profile and contact information.
+- Portuguese and English copy.
 - Work experience.
 - Education.
-- Skills.
-- Featured projects.
+- Skills and current focus areas.
 
 ## Files
 
-- `profile.ts`: name, role, headline, summary and contact links.
-- `experiences.ts`: professional experience timeline.
-- `education.ts`: academic background.
-- `skills.ts`: grouped technical skills and practices.
-- `projects.ts`: featured projects.
+- `site.ts`: single source of truth for profile data, translations, experience, education and skills.
 
 ## Maintenance rules
 

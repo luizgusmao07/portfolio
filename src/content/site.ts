@@ -1,0 +1,203 @@
+export type Language = 'pt' | 'en'
+
+export const languages = {
+  pt: 'Português',
+  en: 'English',
+} as const
+
+export const profile = {
+  name: 'Luiz Gusmão',
+  fullName: 'Luiz Guilherme Tristão Gusmão',
+  initials: 'LG',
+  location: 'São Paulo, Brazil',
+  email: 'lgtgusmao@hotmail.com',
+  links: {
+    linkedIn: 'https://www.linkedin.com/in/luiz-guilherme-t-284716273/',
+    github: 'https://github.com/luizgusmao07',
+  },
+  current: {
+    role: 'Mobile Software Engineer',
+    company: 'CloudWalk, Inc.',
+  },
+  focus: ['Flutter', 'Dart', 'Rust', 'Mobile Product Engineering', 'AI-assisted Development'],
+} as const
+
+export const siteContent = {
+  pt: {
+    nav: {
+      about: 'Sobre',
+      experience: 'Experiência',
+      skills: 'Skills',
+      education: 'Formação',
+      contact: 'Contato',
+    },
+    actions: {
+      viewLinkedIn: 'Ver LinkedIn',
+      sendEmail: 'Enviar email',
+      viewGithub: 'GitHub',
+      switchTo: 'Switch to English',
+      switchTheme: 'Alternar tema',
+    },
+    hero: {
+      eyebrow: 'Mobile · Produto · IA',
+      title: 'Construindo experiências mobile simples, rápidas e confiáveis.',
+      subtitle:
+        'Sou Mobile Software Engineer na CloudWalk, atuando em produtos como InfinitePay e JIM US com Flutter, Dart, Rust e desenvolvimento assistido por IA.',
+      availability: 'São Paulo, Brasil · Aberto a conversas sobre mobile, produto e tecnologia',
+    },
+    about: {
+      label: 'Sobre',
+      title: 'Perfil profissional',
+      paragraphs: [
+        'Atuo na construção e melhoria de experiências mobile usadas por clientes reais, com foco em qualidade, clareza de produto e velocidade de entrega.',
+        'Meu trabalho combina Flutter, Dart e Rust com uma rotina fortemente apoiada por ferramentas de inteligência artificial para acelerar investigação, implementação e refinamento de soluções.',
+        'Tenho formação técnica em Desenvolvimento de Sistemas e curso Análise e Desenvolvimento de Sistemas na FATEC Ipiranga.',
+      ],
+    },
+    experience: {
+      label: 'Experiência',
+      title: 'Trajetória na CloudWalk',
+    },
+    skills: {
+      label: 'Skills',
+      title: 'Tecnologias e foco atual',
+      description:
+        'O site prioriza as tecnologias e práticas que refletem o momento profissional atual.',
+    },
+    education: {
+      label: 'Formação',
+      title: 'Base acadêmica',
+    },
+    contact: {
+      title: 'Vamos conversar?',
+      description:
+        'Para contato profissional, o melhor caminho é LinkedIn ou email. O GitHub fica disponível como referência técnica.',
+    },
+  },
+  en: {
+    nav: {
+      about: 'About',
+      experience: 'Experience',
+      skills: 'Skills',
+      education: 'Education',
+      contact: 'Contact',
+    },
+    actions: {
+      viewLinkedIn: 'View LinkedIn',
+      sendEmail: 'Send email',
+      viewGithub: 'GitHub',
+      switchTo: 'Mudar para Português',
+      switchTheme: 'Toggle theme',
+    },
+    hero: {
+      eyebrow: 'Mobile · Product · AI',
+      title: 'Building simple, fast and reliable mobile experiences.',
+      subtitle:
+        'I am a Mobile Software Engineer at CloudWalk, working on products such as InfinitePay and JIM US with Flutter, Dart, Rust and AI-assisted development.',
+      availability:
+        'São Paulo, Brazil · Open to conversations about mobile, product and technology',
+    },
+    about: {
+      label: 'About',
+      title: 'Professional profile',
+      paragraphs: [
+        'I build and improve mobile experiences used by real customers, with a focus on quality, product clarity and delivery speed.',
+        'My work combines Flutter, Dart and Rust with a workflow strongly supported by artificial intelligence tools to speed up investigation, implementation and refinement.',
+        'I have a technical background in Systems Development and I am currently pursuing an Associate Degree in Systems Analysis and Development at FATEC Ipiranga.',
+      ],
+    },
+    experience: {
+      label: 'Experience',
+      title: 'CloudWalk journey',
+    },
+    skills: {
+      label: 'Skills',
+      title: 'Technologies and current focus',
+      description:
+        'The site prioritizes the technologies and practices that match the current profile.',
+    },
+    education: {
+      label: 'Education',
+      title: 'Academic background',
+    },
+    contact: {
+      title: 'Let’s talk?',
+      description:
+        'For professional contact, LinkedIn or email are the best channels. GitHub is available as a technical reference.',
+    },
+  },
+} as const
+
+export const experiences = [
+  {
+    period: 'May 2026 - Present',
+    title: profile.current.role,
+    organization: profile.current.company,
+    description: {
+      pt: 'Construção e melhoria de experiências mobile em produtos como InfinitePay e JIM US, com Flutter, Dart, Rust e desenvolvimento assistido por IA.',
+      en: 'Building and improving mobile experiences in products such as InfinitePay and JIM US with Flutter, Dart, Rust and AI-assisted development.',
+    },
+    current: true,
+  },
+  {
+    period: 'Feb 2026 - May 2026',
+    title: 'Customer Support Engineer II',
+    organization: profile.current.company,
+    description: {
+      pt: 'Investigação de problemas, suporte a clientes e colaboração com times internos para melhorar processos e qualidade de produto.',
+      en: 'Investigated issues, supported customers and collaborated with internal teams to improve processes and product quality.',
+    },
+  },
+  {
+    period: 'Sep 2025 - Jan 2026',
+    title: 'Customer Support Engineer I',
+    organization: profile.current.company,
+    description: {
+      pt: 'Atendimento a clientes, análise de problemas operacionais e contribuição para melhorias em ferramentas e experiência do cliente.',
+      en: 'Supported customers, analyzed operational issues and contributed to improvements in internal tools and customer experience.',
+    },
+  },
+  {
+    period: 'Jun 2025 - Sep 2025',
+    title: 'Customer Support Engineer Intern',
+    organization: profile.current.company,
+    description: {
+      pt: 'Início da trajetória na CloudWalk com suporte a clientes, investigação de problemas e otimização de processos.',
+      en: 'Started the journey at CloudWalk by supporting customers, investigating issues and optimizing processes.',
+    },
+  },
+] as const
+
+export const education = [
+  {
+    period: 'Jan 2025 - Dec 2026',
+    title: {
+      pt: 'Tecnólogo em Análise e Desenvolvimento de Sistemas',
+      en: 'Associate Degree in Systems Analysis and Development',
+    },
+    organization: 'FATEC Ipiranga Pastor Enéas Tognini',
+  },
+  {
+    period: 'Feb 2022 - Dec 2024',
+    title: {
+      pt: 'Técnico em Desenvolvimento de Sistemas',
+      en: 'Technical High School in Systems Development',
+    },
+    organization: 'ETEC Heliópolis',
+  },
+] as const
+
+export const skillGroups = [
+  {
+    title: 'Mobile Engineering',
+    skills: ['Flutter', 'Dart', 'Mobile Development', 'Product Experience'],
+  },
+  {
+    title: 'Systems',
+    skills: ['Rust', 'Debugging', 'Problem Investigation'],
+  },
+  {
+    title: 'Product & Workflow',
+    skills: ['Product Engineering', 'AI-assisted Development', 'Customer Experience'],
+  },
+] as const

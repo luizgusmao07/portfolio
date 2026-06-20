@@ -13,7 +13,7 @@
 
 ### About
 
-This repository contains Luiz Gusmão's personal portfolio, built to present his professional profile, experience, education, skills and featured projects.
+This repository contains Luiz Gusmão's personal portfolio, built to present his professional profile, experience, education, skills and contact channels.
 
 The portfolio currently highlights Luiz as a **Mobile Software Engineer at CloudWalk**, working with **Flutter, Dart, Rust, Product Engineering and AI-assisted Development**.
 
@@ -21,7 +21,7 @@ The portfolio currently highlights Luiz as a **Mobile Software Engineer at Cloud
 
 - Responsive portfolio UI.
 - Light/dark theme with persisted preference.
-- Structured sections: Hero, About, Experience, Skills, Projects, Education and Contact.
+- Structured sections: Hero, About, Experience, Skills, Education and Contact.
 - Content-first architecture with profile data isolated in `src/content`.
 - SEO metadata, Open Graph tags, favicon and social preview image.
 - GitHub Actions CI.
@@ -77,7 +77,7 @@ src/
     layout/      # Page shell components
     sections/    # Portfolio sections
     ui/          # Reusable shadcn/ui primitives
-  content/       # Profile, experience, education, skills and projects data
+  content/       # Profile, localized copy, experience, education and skills data
   hooks/         # Reusable React hooks
   lib/           # Utilities
 ```
@@ -116,7 +116,7 @@ The previous Vercel deployment was removed and is no longer used.
 
 ### Sobre
 
-Este repositório contém o portfolio pessoal de Luiz Gusmão, criado para apresentar seu perfil profissional, experiências, formação, habilidades e projetos em destaque.
+Este repositório contém o portfolio pessoal de Luiz Gusmão, criado para apresentar seu perfil profissional, experiências, formação, habilidades e canais de contato.
 
 O portfolio atualmente posiciona Luiz como **Mobile Software Engineer na CloudWalk**, com foco em **Flutter, Dart, Rust, Product Engineering e AI-assisted Development**.
 
@@ -124,7 +124,7 @@ O portfolio atualmente posiciona Luiz como **Mobile Software Engineer na CloudWa
 
 - Interface responsiva.
 - Tema claro/escuro com preferência persistida.
-- Seções estruturadas: Hero, Sobre, Experiência, Skills, Projetos, Formação e Contato.
+- Seções estruturadas: Hero, Sobre, Experiência, Skills, Formação e Contato.
 - Arquitetura orientada a conteúdo, com dados profissionais isolados em `src/content`.
 - SEO básico, Open Graph, favicon e imagem de preview social.
 - CI com GitHub Actions.
@@ -180,7 +180,7 @@ src/
     layout/      # Componentes de estrutura da página
     sections/    # Seções do portfolio
     ui/          # Primitivos reutilizáveis do shadcn/ui
-  content/       # Dados de perfil, experiência, formação, skills e projetos
+  content/       # Dados de perfil, textos localizados, experiência, formação e skills
   hooks/         # Hooks React reutilizáveis
   lib/           # Utilitários
 ```
