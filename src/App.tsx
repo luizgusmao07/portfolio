@@ -1,34 +1,27 @@
-import { lazy, Suspense } from 'react'
-
-import { FloatingNav, Header } from '@/components/system'
-
-// Lazy load components for better performance
-const AboutMe = lazy(() =>
-  import('@/components/system/AboutMe').then((m) => ({ default: m.AboutMe })),
-)
-const ProjectsSection = lazy(() =>
-  import('@/components/system/ProjectsSection').then((m) => ({ default: m.ProjectsSection })),
-)
+import { Container } from '@/components/layout/Container'
+import { Header } from '@/components/layout/Header'
+import { AboutSection } from '@/components/sections/AboutSection'
+import { ContactSection } from '@/components/sections/ContactSection'
+import { EducationSection } from '@/components/sections/EducationSection'
+import { ExperienceSection } from '@/components/sections/ExperienceSection'
+import { HeroSection } from '@/components/sections/HeroSection'
+import { ProjectsSection } from '@/components/sections/ProjectsSection'
+import { SkillsSection } from '@/components/sections/SkillsSection'
 
 function App() {
   return (
-    <div className="bg-background min-h-screen overflow-x-hidden">
+    <div className="bg-background text-foreground min-h-screen">
       <Header />
-      {/* Floating navigation - shows on right side for all screen sizes */}
-      <FloatingNav />
-      {/* Alternative: Use BreadcrumbNav instead - uncomment line below and comment FloatingNav above */}
-      {/* <BreadcrumbNav /> */}
-      <main className="pt-2 md:pt-0">
-        <Suspense
-          fallback={<div className="flex h-32 items-center justify-center">Loading...</div>}
-        >
-          <AboutMe />
-        </Suspense>
-        <Suspense
-          fallback={<div className="flex h-32 items-center justify-center">Loading...</div>}
-        >
+      <main>
+        <Container>
+          <HeroSection />
+          <AboutSection />
+          <ExperienceSection />
+          <SkillsSection />
           <ProjectsSection />
-        </Suspense>
+          <EducationSection />
+          <ContactSection />
+        </Container>
       </main>
     </div>
   )

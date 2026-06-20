@@ -1,32 +1,47 @@
 import { useEffect, useState } from 'react'
 
-import { applyTheme, getOppositeTheme, getPreferredTheme, saveTheme } from '@/lib/theme'
-import type { Theme } from '@/types'
+const themeStorageKey = 'theme'
 
-export function useTheme() {
-  const [theme, setTheme] = useState<Theme>(() => getPreferredTheme())
+type Theme = 'dark' | 'light'
 
-  useEffect(() => {
-    applyTheme(theme)
-  }, [theme])
-
-  const toggleTheme = () => {
-    const newTheme = getOppositeTheme(theme)
-    setTheme(newTheme)
-    saveTheme(newTheme)
+function getPreferredTheme(): Theme {
+  if (typeof window === 'undefined') {
+    return 'light'
   }
 
-  const changeTheme = (newTheme: Theme) => {
-    setTheme(newTheme)
-    saveTheme(newTheme)
+  const storedTheme = localStorage.getItem(themeStorageKey)
+  if (storedTheme === 'dark' || storedTheme === 'light') {
+    return storedTheme
+  }
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+}
+
+function applyTheme(theme: Theme) {
+  document.documentElement.classList.toggle('dark', theme === 'dark')
+}
+
+export function useTheme() {
+  const [theme, setTheme] = useState<Theme>('light')
+
+  useEffect(() => {
+    const preferredTheme = getPreferredTheme()
+    setTheme(preferredTheme)
+    applyTheme(preferredTheme)
+  }, [])
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) => {
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark'
+      localStorage.setItem(themeStorageKey, nextTheme)
+      applyTheme(nextTheme)
+      return nextTheme
+    })
   }
 
   return {
+    isDark: theme === 'dark',
     theme,
     toggleTheme,
-    changeTheme,
-    isDark:
-      theme === 'dark' ||
-      (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches),
   }
 }
