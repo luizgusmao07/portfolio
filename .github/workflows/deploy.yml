@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -44,3 +44,21 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  release:
+    needs: deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create deployment release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEPLOY_URL: https://luizgusmao07.github.io/portfolio/
+        run: |
+          tag="deploy-${GITHUB_RUN_NUMBER}"
+          gh release create "$tag" \
+            --target "$GITHUB_SHA" \
+            --title "Deploy ${tag}" \
+            --notes "Automated release generated after a successful GitHub Pages deployment.\n\nCommit: ${GITHUB_SHA}\nProduction: ${DEPLOY_URL}"
