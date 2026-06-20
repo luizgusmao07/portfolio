@@ -1,7 +1,6 @@
 import { Container } from '@/components/layout/Container'
 import { Header } from '@/components/layout/Header'
 import { AboutSection } from '@/components/sections/AboutSection'
-import { ContactSection } from '@/components/sections/ContactSection'
 import { EducationSection } from '@/components/sections/EducationSection'
 import { ExperienceSection } from '@/components/sections/ExperienceSection'
 import { HeroSection } from '@/components/sections/HeroSection'
@@ -22,7 +21,6 @@ function App() {
           <ExperienceSection language={language} />
           <SkillsSection language={language} />
           <EducationSection language={language} />
-          <ContactSection language={language} />
         </Container>
       </main>
     </div>
