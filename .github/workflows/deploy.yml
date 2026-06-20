@@ -8,6 +8,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  pull-requests: read
 
 concurrency:
   group: pages
@@ -19,6 +20,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -51,14 +54,91 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Create deployment release
         env:
           GH_TOKEN: ${{ github.token }}
           DEPLOY_URL: https://luizgusmao07.github.io/portfolio/
         run: |
-          tag="deploy-${GITHUB_RUN_NUMBER}"
+          set -euo pipefail
+
+          tag="v$(date -u +'%Y.%m.%d').${GITHUB_RUN_NUMBER}"
+          previous_tag="$(git describe --tags --abbrev=0 --exclude "$tag" 2>/dev/null || true)"
+
+          if [ -n "$previous_tag" ]; then
+            range="$previous_tag..HEAD"
+          else
+            range="HEAD"
+          fi
+
+          prs_file="/tmp/release-prs.md"
+          commits_file="/tmp/release-commits.md"
+          : > "$prs_file"
+          : > "$commits_file"
+
+          git log --pretty=format:'%s%x09%h' "$range" | while IFS=$'\t' read -r subject short_sha; do
+            pr_number="$(printf '%s' "$subject" | sed -nE 's/.*\(#([0-9]+)\).*/\1/p')"
+
+            if [ -n "$pr_number" ]; then
+              pr_json="$(gh pr view "$pr_number" --json number,title,url,headRefName 2>/dev/null || true)"
+              if [ -n "$pr_json" ]; then
+                pr_title="$(printf '%s' "$pr_json" | jq -r '.title')"
+                pr_url="$(printf '%s' "$pr_json" | jq -r '.url')"
+                pr_branch="$(printf '%s' "$pr_json" | jq -r '.headRefName')"
+                printf -- '- #%s [%s](%s) — `%s`\n' "$pr_number" "$pr_title" "$pr_url" "$pr_branch" >> "$prs_file"
+                continue
+              fi
+            fi
+
+            printf -- '- %s (`%s`)\n' "$subject" "$short_sha" >> "$commits_file"
+          done
+
+          if [ ! -s "$prs_file" ]; then
+            printf -- '- No pull request metadata found for this deployment.\n' > "$prs_file"
+          fi
+
+          if [ ! -s "$commits_file" ]; then
+            printf -- '- All deployment commits were associated with merged pull requests.\n' > "$commits_file"
+          fi
+
+          cat > /tmp/release-notes.md <<EOF
+          ## Added
+
+          - _No explicit additions were marked for this deployment._
+
+          ## Changed
+
+          - Deployed the latest changes to GitHub Pages.
+
+          ## Fixed
+
+          - _No explicit fixes were marked for this deployment._
+
+          ## Merged pull requests and branches
+
+          $(cat "$prs_file")
+
+          ## Other commits
+
+          $(cat "$commits_file")
+
+          ## Deployment
+
+          - Production: ${DEPLOY_URL}
+          - Commit: ${GITHUB_SHA}
+          - Workflow run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
+
+          ## Validation
+
+          - GitHub Actions CI passed on `master`.
+          - GitHub Pages deployment completed successfully.
+          EOF
+
+          sed -i 's/^          //' /tmp/release-notes.md
+
           gh release create "$tag" \
             --target "$GITHUB_SHA" \
-            --title "Deploy ${tag}" \
-            --notes "Automated release generated after a successful GitHub Pages deployment.\n\nCommit: ${GITHUB_SHA}\nProduction: ${DEPLOY_URL}"
+            --title "$tag" \
+            --notes-file /tmp/release-notes.md
