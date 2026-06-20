@@ -92,6 +92,7 @@ Every commit pushed to `master` triggers:
 2. Production build.
 3. GitHub Pages artifact upload.
 4. Deployment to <https://luizgusmao07.github.io/portfolio/>.
+5. Automated GitHub Release tagged as `deploy-<run_number>`.
 
 The Vite base path is configured through `BASE_PATH`. In GitHub Actions it uses:
 
@@ -107,6 +108,7 @@ The previous Vercel deployment was removed and is no longer used.
 - `master` is protected.
 - The `quality` status check is required.
 - Force pushes and branch deletion are blocked.
+- Merged pull request branches are deleted automatically.
 - Use pull requests for regular changes.
 - Keep module-level `AGENTS.md` files updated when responsibilities change.
 
@@ -195,6 +197,7 @@ Cada commit enviado para a branch `master` dispara:
 2. Build de produção.
 3. Upload do artefato do GitHub Pages.
 4. Deploy em <https://luizgusmao07.github.io/portfolio/>.
+5. Release automática no GitHub com tag `deploy-<run_number>`.
 
 O base path do Vite é configurado por `BASE_PATH`. No GitHub Actions, o valor usado é:
 
@@ -210,6 +213,7 @@ O deploy anterior na Vercel foi removido e não é mais utilizado.
 - `master` está protegida.
 - O status check `quality` é obrigatório.
 - Force push e deleção da branch estão bloqueados.
+- Branches de Pull Requests mergeados são deletadas automaticamente.
 - Use Pull Requests para alterações regulares.
 - Mantenha os arquivos `AGENTS.md` atualizados quando responsabilidades mudarem.
 

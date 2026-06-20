@@ -33,6 +33,7 @@ Every commit pushed to `master` triggers:
 
 1. CI via `.github/workflows/ci.yml`.
 2. GitHub Pages build and deploy via `.github/workflows/deploy.yml`.
+3. An automated GitHub Release tagged as `deploy-<run_number>` after a successful deployment.
 
 Production URL:
 
@@ -46,6 +47,7 @@ https://luizgusmao07.github.io/portfolio/
 - `master` is protected.
 - Required status check: `quality`.
 - Force pushes and branch deletion are blocked.
+- Branches are automatically deleted after pull requests are merged.
 
 ## Maintenance guidelines
 
