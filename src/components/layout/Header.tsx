@@ -1,6 +1,6 @@
 import { Languages, Moon, Sun } from 'lucide-react'
 
-import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import type { Language } from '@/content/site'
 import { profile, siteContent } from '@/content/site'
@@ -29,6 +29,7 @@ export function Header({ language, onToggleLanguage }: HeaderProps) {
         <div className="flex items-center justify-between py-3">
           <a href="#top" className="flex items-center gap-2 font-semibold" aria-label="Go to top">
             <Avatar className="size-9 border">
+              <AvatarImage src={profile.photo} alt={profile.name} />
               <AvatarFallback>{profile.initials}</AvatarFallback>
             </Avatar>
             <span>{profile.name}</span>

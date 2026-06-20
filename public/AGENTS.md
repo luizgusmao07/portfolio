@@ -8,6 +8,7 @@ Current assets include:
 
 - `favicon.svg`: browser favicon.
 - `og-image.svg`: social preview image used by Open Graph/Twitter metadata.
+- `luiz-profile.jpg`: profile photo used in the header and hero section.
 
 ## Maintenance rules
 

@@ -19,7 +19,8 @@ export const profile = {
     role: 'Mobile Software Engineer',
     company: 'CloudWalk, Inc.',
   },
-  focus: ['Flutter', 'Dart', 'Rust', 'Mobile Product Engineering', 'AI-assisted Development'],
+  photo: '/luiz-profile.jpg',
+  focus: ['Flutter', 'Dart', 'Rust', 'InfinitePay', 'JIM US'],
 } as const
 
 export const siteContent = {
@@ -38,18 +39,19 @@ export const siteContent = {
       switchTheme: 'Alternar tema',
     },
     hero: {
-      eyebrow: 'Mobile · Produto · IA',
-      title: 'Construindo experiências mobile simples, rápidas e confiáveis.',
+      title: 'Mobile Software Engineer na CloudWalk.',
       subtitle:
-        'Sou Mobile Software Engineer na CloudWalk, atuando em produtos como InfinitePay e JIM US com Flutter, Dart, Rust e desenvolvimento assistido por IA.',
+        'Trabalho na evolução de experiências mobile do InfinitePay e do JIM US, conectando Flutter, Dart e Rust a decisões práticas de produto.',
+      detail:
+        'Minha rotina mistura engenharia mobile, investigação de problemas reais de clientes e uso intencional de IA para acelerar desenvolvimento com qualidade.',
       availability: 'São Paulo, Brasil',
     },
     about: {
       label: 'Sobre',
       title: 'Perfil profissional',
       paragraphs: [
-        'Atuo na construção e melhoria de experiências mobile usadas por clientes reais, com foco em qualidade, clareza de produto e velocidade de entrega.',
-        'Meu trabalho combina Flutter, Dart e Rust com uma rotina fortemente apoiada por ferramentas de inteligência artificial para acelerar investigação, implementação e refinamento de soluções.',
+        'Atuo na construção e melhoria de experiências mobile em produtos da CloudWalk, especialmente InfinitePay e JIM US.',
+        'Meu trabalho combina Flutter, Dart e Rust com investigação de problemas, cuidado com experiência do usuário e uso intencional de ferramentas de inteligência artificial.',
         'Tenho formação técnica em Desenvolvimento de Sistemas e curso Análise e Desenvolvimento de Sistemas na FATEC Ipiranga.',
       ],
     },
@@ -83,18 +85,19 @@ export const siteContent = {
       switchTheme: 'Toggle theme',
     },
     hero: {
-      eyebrow: 'Mobile · Product · AI',
-      title: 'Building simple, fast and reliable mobile experiences.',
+      title: 'Mobile Software Engineer at CloudWalk.',
       subtitle:
-        'I am a Mobile Software Engineer at CloudWalk, working on products such as InfinitePay and JIM US with Flutter, Dart, Rust and AI-assisted development.',
+        'I work on mobile product experiences for InfinitePay and JIM US, connecting Flutter, Dart and Rust with practical product decisions.',
+      detail:
+        'My day-to-day combines mobile engineering, investigation of real customer issues and intentional use of AI to move faster without losing quality.',
       availability: 'São Paulo, Brazil',
     },
     about: {
       label: 'About',
       title: 'Professional profile',
       paragraphs: [
-        'I build and improve mobile experiences used by real customers, with a focus on quality, product clarity and delivery speed.',
-        'My work combines Flutter, Dart and Rust with a workflow strongly supported by artificial intelligence tools to speed up investigation, implementation and refinement.',
+        'I build and improve mobile experiences for CloudWalk products, especially InfinitePay and JIM US.',
+        'My work combines Flutter, Dart and Rust with problem investigation, user experience care and intentional use of artificial intelligence tools.',
         'I have a technical background in Systems Development and I am currently pursuing an Associate Degree in Systems Analysis and Development at FATEC Ipiranga.',
       ],
     },
