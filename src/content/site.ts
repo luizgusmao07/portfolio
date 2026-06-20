@@ -1,5 +1,7 @@
 export type Language = 'pt' | 'en'
 
+const publicAsset = (fileName: string) => `${import.meta.env.BASE_URL}${fileName}`
+
 export const languages = {
   pt: 'Português',
   en: 'English',
@@ -19,7 +21,7 @@ export const profile = {
     role: 'Mobile Software Engineer',
     company: 'CloudWalk, Inc.',
   },
-  photo: '/luiz-profile.jpg',
+  photo: publicAsset('luiz-profile.jpg'),
   focus: ['Flutter', 'Dart', 'Rust', 'InfinitePay', 'JIM US'],
 } as const
 
