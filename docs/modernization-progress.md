@@ -172,9 +172,9 @@ Estas etapas dependem de push/merge e/ou configuração no GitHub:
 
 - [x] `CHANGELOG.md` existe.
 - [x] Versão `v1.1.0` documentada no changelog.
-- [ ] Tag `v1.1.0` pendente de criação após esta atualização final.
-- [ ] Release pendente de criação após esta atualização final.
-- [ ] Release notes pendentes de publicação após esta atualização final.
+- [ ] Tag `v1.1.0` criada.
+- [ ] Release `v1.1.0` criada no GitHub.
+- [ ] Release notes publicadas no GitHub.
 
 ### Fase 10 — Revisão final e handoff
 
