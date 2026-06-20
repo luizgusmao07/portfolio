@@ -10,7 +10,6 @@ Each component should represent a meaningful section of the site, for example:
 - About
 - Experience
 - Skills
-- Projects
 - Education
 - Contact
 
