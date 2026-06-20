@@ -6,9 +6,9 @@ This directory contains static assets served directly by Vite.
 
 Current assets include:
 
-- `favicon.svg`: browser favicon.
+- `favicon.svg`: legacy/custom browser favicon asset kept available.
 - `og-image.svg`: social preview image used by Open Graph/Twitter metadata.
-- `luiz-profile.jpg`: profile photo used in the header and hero section.
+- `luiz-profile.jpg`: profile photo used in the header, hero section and browser tab icon.
 
 ## Maintenance rules
 
