@@ -1,17 +1,11 @@
 # Portfolio
 
-Modern personal portfolio built with React, Vite, Tailwind CSS v4, and shadcn/ui.
+Personal portfolio for Luiz Guilherme Tristão Gusmão, Mobile Software Engineer at CloudWalk.
 
 ## Live demo
 
-- URL: https://portfolio-luiz-murex.vercel.app/
-
-## Features
-
-- Responsive, accessible UI with a neutral design and purple accents
-- Light/dark theme toggle persisted to `localStorage`
-- Reusable UI primitives (buttons, cards, dialogs, inputs, etc.) powered by shadcn/ui and Radix
-- Example `TodoList` system to showcase component patterns and state management
+- Current target: GitHub Pages (`https://luizgusmao07.github.io/portfolio/`)
+- Previous deployment: Vercel (`https://portfolio-luiz-murex.vercel.app/`)
 
 ## Tech stack
 
@@ -19,48 +13,60 @@ Modern personal portfolio built with React, Vite, Tailwind CSS v4, and shadcn/ui
 - Vite 7
 - Tailwind CSS v4
 - shadcn/ui + Radix primitives
+- ESLint + Prettier
+- Husky + lint-staged
+- GitHub Actions
 
 ## Getting started
 
-Prerequisites: Node.js 18+.
+Prerequisites: Node.js 22+.
 
-Install dependencies and run the dev server:
-
-```
+```bash
 npm install
 npm run dev
 ```
 
 Build and preview production:
 
-```
+```bash
 npm run build
 npm run preview
 ```
 
+Run all local validations:
+
+```bash
+npm run validate
+```
+
 ## Project structure
 
-```
+```txt
 src/
   components/
-    system/         # feature components (e.g., TodoList)
-    ui/             # reusable UI primitives (shadcn-styled)
-  lib/              # utilities and domain logic
-  assets/           # icons/images
-  main.tsx          # app bootstrap
-  index.css         # design tokens and Tailwind layers
+    layout/      # page shell components
+    sections/    # portfolio sections
+    ui/          # reusable shadcn/ui primitives
+  content/       # profile, experience, education, skills and projects data
+  hooks/         # reusable hooks
+  lib/           # utilities
 ```
 
-## Theming
+## Deployment
 
-The theme is toggled with `document.documentElement.classList.toggle('dark')` and stored in `localStorage`.
+Production deployment is configured with GitHub Pages through `.github/workflows/deploy.yml`.
 
-## Scripts
+The Vite `base` path is controlled by `BASE_PATH`. GitHub Pages uses `/portfolio/` in CI.
 
-- `npm run dev`: start development server
-- `npm run build`: type-check and build for production
-- `npm run preview`: preview the production build
+## Repository workflow
 
-## Good practices and engineering standards
+- Open a pull request for changes targeting `main`.
+- CI runs formatting, linting, type checking and build.
+- Keep `CHANGELOG.md` updated for notable changes.
 
-See `GOOD_PRACTICES.md` for formatting, linting, type checking, pre-commit hooks, and CI recommendations.
+## Documentation
+
+- Modernization plan: [`docs/portfolio-modernization-plan.md`](docs/portfolio-modernization-plan.md)
+- Progress tracking: [`docs/modernization-progress.md`](docs/modernization-progress.md)
+- Engineering standards: [`GOOD_PRACTICES.md`](GOOD_PRACTICES.md)
+- Changelog: [`CHANGELOG.md`](CHANGELOG.md)

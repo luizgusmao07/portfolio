@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#111827" />
+  <circle cx="965" cy="95" r="220" fill="#7c3aed" opacity="0.35" />
+  <circle cx="190" cy="560" r="260" fill="#a855f7" opacity="0.25" />
+  <text x="96" y="245" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" fill="#ffffff">Luiz Gusmão</text>
+  <text x="96" y="335" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="600" fill="#c4b5fd">Mobile Software Engineer</text>
+  <text x="96" y="415" font-family="Inter, Arial, sans-serif" font-size="30" fill="#d1d5db">Flutter · Dart · Rust · Product Engineering</text>
+</svg>
