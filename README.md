@@ -3,7 +3,7 @@
 [![CI](https://github.com/luizgusmao07/portfolio/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/luizgusmao07/portfolio/actions/workflows/ci.yml)
 [![Deploy to GitHub Pages](https://github.com/luizgusmao07/portfolio/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/luizgusmao07/portfolio/actions/workflows/deploy.yml)
 
-> Personal portfolio for Luiz Guilherme Tristão Gusmão — Mobile Software Engineer at CloudWalk.
+> My personal portfolio — Mobile Software Engineer at CloudWalk.
 
 **Live site:** <https://luizgusmao07.github.io/portfolio/>
 
@@ -13,19 +13,21 @@
 
 ### About
 
-This repository contains Luiz Gusmão's personal portfolio, built to present his professional profile, experience, education, skills and contact channels.
+This is my personal portfolio. I use it to present my professional profile, experience, education, skills and contact channels in a clean and maintainable way.
 
-The portfolio currently highlights Luiz as a **Mobile Software Engineer at CloudWalk**, working with **Flutter, Dart, Rust, Product Engineering and AI-assisted Development**.
+I currently work as a **Mobile Software Engineer at CloudWalk**, with a focus on **Flutter, Dart, Rust, Product Engineering and AI-assisted Development**.
 
 ### Features
 
 - Responsive portfolio UI.
+- Portuguese/English language toggle.
 - Light/dark theme with persisted preference.
-- Structured sections: Hero, About, Experience, Skills, Education and Contact.
-- Content-first architecture with profile data isolated in `src/content`.
+- Structured sections: Hero, About, Experience, Skills and Education.
+- Content-first architecture with profile data and localized copy isolated in `src/content`.
 - SEO metadata, Open Graph tags, favicon and social preview image.
 - GitHub Actions CI.
 - Automatic GitHub Pages deployment from `master`.
+- Automated deployment releases.
 - Dependabot updates for npm and GitHub Actions.
 - Pull request template and module-level maintainer docs.
 
@@ -92,13 +94,7 @@ Every commit pushed to `master` triggers:
 2. Production build.
 3. GitHub Pages artifact upload.
 4. Deployment to <https://luizgusmao07.github.io/portfolio/>.
-5. Automated GitHub Release tagged as `deploy-<run_number>`.
-
-The Vite base path is configured through `BASE_PATH`. In GitHub Actions it uses:
-
-```bash
-BASE_PATH=/portfolio/
-```
+5. Automated GitHub Release using the `vYYYY.MM.DD.<run_number>` version pattern.
 
 The previous Vercel deployment was removed and is no longer used.
 
@@ -118,19 +114,21 @@ The previous Vercel deployment was removed and is no longer used.
 
 ### Sobre
 
-Este repositório contém o portfolio pessoal de Luiz Gusmão, criado para apresentar seu perfil profissional, experiências, formação, habilidades e canais de contato.
+Este é o meu portfolio pessoal. Eu uso este projeto para apresentar meu perfil profissional, experiências, formação, habilidades e canais de contato de uma forma limpa e fácil de manter.
 
-O portfolio atualmente posiciona Luiz como **Mobile Software Engineer na CloudWalk**, com foco em **Flutter, Dart, Rust, Product Engineering e AI-assisted Development**.
+Atualmente atuo como **Mobile Software Engineer na CloudWalk**, com foco em **Flutter, Dart, Rust, Product Engineering e AI-assisted Development**.
 
 ### Funcionalidades
 
 - Interface responsiva.
+- Alternância de idioma entre português e inglês.
 - Tema claro/escuro com preferência persistida.
-- Seções estruturadas: Hero, Sobre, Experiência, Skills, Formação e Contato.
-- Arquitetura orientada a conteúdo, com dados profissionais isolados em `src/content`.
+- Seções estruturadas: Hero, Sobre, Experiência, Skills e Formação.
+- Arquitetura orientada a conteúdo, com dados profissionais e textos localizados isolados em `src/content`.
 - SEO básico, Open Graph, favicon e imagem de preview social.
 - CI com GitHub Actions.
 - Deploy automático no GitHub Pages a partir da branch `master`.
+- Releases automáticas a cada deploy.
 - Dependabot para npm e GitHub Actions.
 - Template de Pull Request e documentação modular para manutenção.
 
@@ -197,13 +195,7 @@ Cada commit enviado para a branch `master` dispara:
 2. Build de produção.
 3. Upload do artefato do GitHub Pages.
 4. Deploy em <https://luizgusmao07.github.io/portfolio/>.
-5. Release automática no GitHub com tag `deploy-<run_number>`.
-
-O base path do Vite é configurado por `BASE_PATH`. No GitHub Actions, o valor usado é:
-
-```bash
-BASE_PATH=/portfolio/
-```
+5. Release automática no GitHub seguindo o padrão de versão `vYYYY.MM.DD.<run_number>`.
 
 O deploy anterior na Vercel foi removido e não é mais utilizado.
 
