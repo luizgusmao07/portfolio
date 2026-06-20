@@ -2,7 +2,6 @@
 
 [![CI](https://github.com/luizgusmao07/portfolio/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/luizgusmao07/portfolio/actions/workflows/ci.yml)
 [![Deploy to GitHub Pages](https://github.com/luizgusmao07/portfolio/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/luizgusmao07/portfolio/actions/workflows/deploy.yml)
-[![Release](https://img.shields.io/github/v/release/luizgusmao07/portfolio)](https://github.com/luizgusmao07/portfolio/releases)
 
 > Personal portfolio for Luiz Guilherme Tristão Gusmão — Mobile Software Engineer at CloudWalk.
 
@@ -28,7 +27,7 @@ The portfolio currently highlights Luiz as a **Mobile Software Engineer at Cloud
 - GitHub Actions CI.
 - Automatic GitHub Pages deployment from `master`.
 - Dependabot updates for npm and GitHub Actions.
-- Pull request template and changelog.
+- Pull request template and module-level maintainer docs.
 
 ### Tech stack
 
@@ -109,7 +108,7 @@ The previous Vercel deployment was removed and is no longer used.
 - The `quality` status check is required.
 - Force pushes and branch deletion are blocked.
 - Use pull requests for regular changes.
-- Keep `CHANGELOG.md` updated for notable changes.
+- Keep module-level `AGENTS.md` files updated when responsibilities change.
 
 ---
 
@@ -131,7 +130,7 @@ O portfolio atualmente posiciona Luiz como **Mobile Software Engineer na CloudWa
 - CI com GitHub Actions.
 - Deploy automático no GitHub Pages a partir da branch `master`.
 - Dependabot para npm e GitHub Actions.
-- Template de Pull Request e changelog.
+- Template de Pull Request e documentação modular para manutenção.
 
 ### Stack técnica
 
@@ -212,11 +211,10 @@ O deploy anterior na Vercel foi removido e não é mais utilizado.
 - O status check `quality` é obrigatório.
 - Force push e deleção da branch estão bloqueados.
 - Use Pull Requests para alterações regulares.
-- Mantenha o `CHANGELOG.md` atualizado para mudanças relevantes.
+- Mantenha os arquivos `AGENTS.md` atualizados quando responsabilidades mudarem.
 
 ## Documentation / Documentação
 
+- [Maintainer/agent guide](AGENTS.md)
 - [Modernization plan](docs/portfolio-modernization-plan.md)
 - [Modernization progress](docs/modernization-progress.md)
-- [Engineering standards](GOOD_PRACTICES.md)
-- [Changelog](CHANGELOG.md)
